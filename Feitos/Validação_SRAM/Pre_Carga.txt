@@ -1,0 +1,24 @@
+*PARÂMETROS
+.param length = 32nm
+.param width = 64nm
+
+* VALIDAÇÃO CIRCUITO DE PRÉ-CARGA
+.include 32nm_HP.pm
+
+* DECLARAÇÃO DAS FONTES DE TENSÃO
+Vvdd vdd gnd 1
+
+* DECLARAÇÃO DAS ENTRADAS
+VPre Pre gnd PWL (0ns 0 0.05ns 1)
+
+* DECLARAÇÃO DO CIRCUITO
+* NOMENCLATURA: nome source gate dreno bulk TIPO_PMOS_OU_NMOS w=  l=
+
+M1 vdd Pre Bl vdd PMOS w= width l=length
+M2 vdd Pre Blb vdd PMOS w=width l=length
+M3 bl Pre blb vdd PMOS w=width l=length
+
+.tran 0.01ns 5ns
+
+.end
+

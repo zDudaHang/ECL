@@ -5,17 +5,10 @@
 Vvdd vdd gnd 1
 
 * DECLARAÇÃO DAS ENTRADAS
-* WRITE 1: 0ns - 1ns
-* HOLD: 1.5ns - 2ns
-* READ: 2.5ns - 3ns
-* WRITE 0: 3.5ns - 4ns
-* WRITE 1: 4.5ns - 5ns
 
-Vwl WL gnd PWL (0ns 1 1ns 1 1.5ns 0 2ns 0 2.5ns 1 3ns 1)
-Vbl BL gnd PWL (0ns 
-Vblb Blb gnd PWL (0ns 0 2ns 1 4ns 0)
-*Vq Q
-*Vqb Qb
+Vwl WL gnd PWL (0ns 1 1ns 1 2ns 1 3ns 1 4ns 0)
+Vbl BL gnd PWL (0ns 0 0.5ns 0 1ns 1)
+Vblb Blb gnd PWL (0ns 1 0.5ns 1 1ns 1 1.5ns 1 2ns 0 2.5ns 0 3ns 1)
 
 * DECLARAÇÃO DO CIRCUITO
 * NOMENCLATURA: nome source gate dreno bulk TIPO_PMOS_OU_NMOS w=  l=
@@ -32,6 +25,6 @@ M6 Blb WL Qb gnd NMOS w = 64nm l = 32nm
 M4 vdd Q Qb vdd PMOS w = 64nm l = 32nm
 M2 Qb Q gnd gnd NMOS w = 64nm l = 32nm
 
-.tran 0.01ns 5ns
+.tran 0.01ns 4ns
 
 .end

@@ -26,4 +26,8 @@ M2 Qb Q gnd out_sae NMOS w = width l = length
 * TRANSISTOR DE PASSAGEM GND
 M7 out_sae sae gnd gnd NMOS w = width l = length
 
+* CAPACITORES
+Cload out gnd 1f
+Cload2 outb gnd 1f
+
 .end
