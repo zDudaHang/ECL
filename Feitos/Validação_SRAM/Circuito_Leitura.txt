@@ -1,0 +1,27 @@
+
+* DECLARAÇÃO DO CIRCUITO
+
+.subckt leitura sae bl blb out outb vdd gnd
+
+* TRANSISTORES DE PASSAGEM
+M5 bl sae out vdd PMOS w =w_sae l =length
+M6 blb sae outb vdd PMOS w =w_sae l =length
+
+* INVERSOR 1
+M3 vdd qb q vdd PMOS w =w_sae l =length
+M1 q qb gnd out_sae NMOS w =w_sae l =length
+
+* INVERSOR 2
+M4 vdd q qb vdd PMOS w =w_sae l = length
+M2 qb q gnd out_sae NMOS w =w_sae l =length
+
+* TRANSISTOR DE PASSAGEM GND
+M7 out_sae sae gnd gnd NMOS w =w_sae l =length
+
+* CAPACITORES
+Cload out gnd 1f
+Cload2 outb gnd 1f
+
+.end subckt
+
+.end
