@@ -1,0 +1,30 @@
+
+* DECLARAÇÃO DO CIRCUITO
+
+* DIMENSÃO DO SENSE AMPLIFIER:
+*.param w_sae = 210n
+
+.subckt leitura sae bl blb out outb vdd gnd
+
+* TRANSISTORES DE PASSAGEM
+M5 bl sae out vdd PMOS w =210n l =32n
+M6 blb sae outb vdd PMOS w =210n l =32n
+
+* INVERSOR 1
+M3 vdd qb q vdd PMOS w =210n l =32n
+M1 q qb gnd out_sae NMOS w =210n l =32n
+
+* INVERSOR 2
+M4 vdd q qb vdd PMOS w =210n l = 32n
+M2 qb q gnd out_sae NMOS w =210n l =32n
+
+* TRANSISTOR DE PASSAGEM GND
+M7 out_sae sae gnd gnd NMOS w =210n l =32n
+
+* CAPACITORES
+Cload out gnd 1f
+Cload2 outb gnd 1f
+
+.ends leitura
+
+*.end

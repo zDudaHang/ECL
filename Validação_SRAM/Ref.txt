@@ -34,7 +34,7 @@
 
 	
 * Clock (g: ghz, meg:mhz, k: khz)
-	.param clock = 1g
+	.param clock = 0.5g
 	.param slope = 0.01*unit
 	.param unit = 1/clock
 *periodo para 0.25GHz ->2ns
@@ -143,13 +143,9 @@ Vsae 	sae	gnd	PWL 	(0n  0
 
 
 *** Pré-carga
-Xpcarga pre bl blb vdd Precarga
-
-.subckt Precarga pre bl blb vdd 
 	Mpc1	vdd		pre		bl		vdd		PMOS	w= w_pc 	l=length
 	Mpc2	vdd		pre		blb		vdd		PMOS	w= w_pc 	l=length
 	Mpc3	blb		pre		bl		vdd		PMOS	w= w_pc 	l=length
-.end subckt
 	
 *** 63 Celulas 6T (Q = 0)
 * Inversor 1
