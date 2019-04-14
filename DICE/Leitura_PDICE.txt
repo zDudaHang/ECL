@@ -1,0 +1,48 @@
+
+* DECLARAÇÃO DO CIRCUITO
+
+* DIMENSÃO DO SENSE AMPLIFIER:
+*.param w_sae = 210n
+
+.subckt leitura sae bl blb out outb vdd gnd
+
+* INVERSOR 1
+MP0 vdd q2 x0 vdd PMOS w=210n l=32n
+MN0 x0 q0 gnd gnd NMOS w=210n l=32n
+
+* COPIA INVERSOR 1
+MP2 vdd q0 q1 vdd PMOS w=210n l=32n
+MN2 q1 q2 gnd gnd NMOS w=210n l=32n
+
+* INVERSOR 2
+MP1 vdd x0 q0 vdd PMOS w=210n l=32n
+MN1 q0 q1 gnd gnd NMOS w=210n l=32n
+
+* COPIA INVERSOR 2
+MP3 vdd q1 q2 vdd PMOS w=210n l=32n
+MN3 q2 x0 gnd gnd NMOS w=210n l=32n
+
+* TRANSISTORES DE PASSAGEM
+MSAE1 bl sae out vdd PMOS w=210n l=32n
+MSAE2 blb sae outb vdd PMOS w=210n l=32n
+
+MN5 q0 wwl bl gnd NMOS w=210n l=32n
+MN6 q2 wwl bl gnd NMOS w=210n l=32n
+
+MN7 bl rwl q7_8 gnd NMOS w=210n l=32n
+MN8 q7_8 q0 gnd gnd NMOS w=210n l=32n
+MN9 gnd q1 q9_10 gnd NMOS w=210n l=32n
+MN10 q9_10 rwl blb gnd NMOS w=210n l=32n
+
+
+*** PROBLEMA !	
+* TRANSISTOR DE PASSAGEM GND
+M7 out_sae sae gnd gnd NMOS w =210n l =32n
+
+* CAPACITORES
+Cload out gnd 1f
+Cload2 outb gnd 1f
+
+.ends leitura
+
+*.end

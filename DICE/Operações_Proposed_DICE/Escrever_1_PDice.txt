@@ -1,0 +1,112 @@
+** --------------------------------------------------- VALIDACAO SRAM DICE S/ SEU NA LEITURA // ESCRITA DO 1
+
+** --------------------------------------------------- INCLUDES
+
+* TECNOLOGY
+.include 32nm_HP.pm
+
+* SUB-CIRCUITOS
+.include Circuito_Escrita.txt
+.include Leitura_PDICE.txt
+.include Pre_Carga.txt
+
+** --------------------------------------------------- PARAMETROS
+
+* NODO
+.param length = 32n
+
+* TENSAO CIRCUITO
+.param supply = 0.9
+
+* DIMENSOES DA CELULA
+.param width = 70n
+
+* TEMPO
+* t_s = tempo de subida = tempo de descida
+.param clock = 1g
+.param t_s = 1ps
+.param periodo = 1/clock
+.param unidade = periodo/7
+
+.global supply gnd
+
+** --------------------------------------------------- FONTES DO CIRCUITO
+
+Vdd vdd gnd DC supply
+
+.param vboost_escrita_0 = 'supply + 0.72'
+
+** --------------------------------------------------- SIMULACAO
+
+Vbit bit gnd PWL(0ns 0)
+
+Vwe we gnd PWL(0ns 0 '2*unidade' 0 '2*unidade + t_s' vboost_escrita_0 '5*unidade' vboost_escrita_0 '5*unidade + t_s' 0)
+
+Vpre pre gnd PWL(0ns 0 'unidade' 0 'unidade + t_s' vboost_escrita_0 '6*unidade' vboost_escrita_0 '6*unidade + t_s' 0)
+
+Vwwl wwl gnd PWL(0ns 0 '3*unidade' 0 '3*unidade + t_s' vboost_escrita_0 '4*unidade' vboost_escrita_0 '4*unidade + t_s' 0) 
+
+Vrwl rwl gnd PWL(0ns 0)
+
+** --------------------------------------------------- DECLARACAO DO CIRCUITO
+
+* SUB-CIRCUITOS
+
+* PRE-CARGA
+Xprecarga pre bl blb vdd gnd pre_carga
+
+* LEITURA
+Xleitura sae bl blb out outb vdd gnd leitura
+
+* ESCRITA
+Xescrita bit we bl blb vdd gnd escrita
+
+* CIRCUITO DICE:
+
+* INVERSOR 1
+MP0 vdd q2 x0 vdd PMOS w=width l=length
+MN0 x0 q0 gnd gnd NMOS w=width l=length
+
+* COPIA INVERSOR 1
+MP2 vdd q0 q1 vdd PMOS w=width l=length
+MN2 q1 q2 gnd gnd NMOS w=width l=length
+
+* INVERSOR 2
+MP1 vdd x0 q0 vdd PMOS w=width l=length
+MN1 q0 q1 gnd gnd NMOS w=width l=length
+
+* COPIA INVERSOR 2
+MP3 vdd q1 q2 vdd PMOS w=width l=length
+MN3 q2 x0 gnd gnd NMOS w=width l=length
+
+* TRANSISTORES DE PASSAGEM
+MN5 q0 wwl bl gnd NMOS w=width l=length
+MN6 q2 wwl bl gnd NMOS w=width l=length
+
+MN7 bl rwl q7_8 gnd NMOS w=width l=length
+MN8 q7_8 q0 gnd gnd NMOS w=width l=length
+MN9 gnd q1 q9_10 gnd NMOS w=width l=length
+MN10 q9_10 rwl blb gnd NMOS w=width l=length
+
+** Valor inicial da celula de teste
+	.ic  v(x0)=0
+
+** --------------------------------------------------- RESULTADOS
+
+.tran 0.01ns 'periodo'
+
+.measure tran Escrita_1 trig v(wwl) val='supply/2' rise=1 targ v(x0) val='supply/2' rise=1
+
+.measure tran Energia_vdd INTEG i(Vdd) from=0 to='periodo'
+
+.control		
+	run
+	set noaskquit
+	set color0=white 	**white background
+	set color1=black 	**black grid
+	set xbrushwidth=2 	**linewidth for grid, border and graph
+	*quit
+.endc
+
+
+.end

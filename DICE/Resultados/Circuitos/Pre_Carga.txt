@@ -1,0 +1,15 @@
+** --------------------------------------------------- DECLARAÇÃO DO CIRCUITO
+
+* DIMENSÃO DA PRÉ-CARGA:
+*.param 210n = 210n
+
+
+.subckt pre_carga pre bl blb vdd gnd
+
+M1 vdd pre bl vdd PMOS w=210n l=32n
+M2 vdd pre blb vdd PMOS w=210n l=32n
+M3 bl pre blb vdd PMOS w=210n l=32n
+
+.ends pre_carga
+
+*.end

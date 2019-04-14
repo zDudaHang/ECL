@@ -66,10 +66,10 @@ Vsae sae gnd PWL(0ns 0 'period + 3*step' 0 'period + 3*step + slope' supply 'per
 Xprecarga pre bl blb vdd gnd pre_carga
 
 * LEITURA
-Xleitura  sae bl blb out outb vdd gnd Leitura
+Xleitura  sae bl blb out outb vdd gnd leitura
 
 * ESCRITA
-Xescrita  bit we bl blb vdd gnd Escrita
+Xescrita  bit we bl blb vdd gnd escrita
 
 ** CIRCUITO 6T
 
