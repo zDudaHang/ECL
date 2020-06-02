@@ -1,0 +1,6 @@
+$DATA1 SOURCE='HSPICE' VERSION='H-2013.03-SP1 32-BIT'
+.TITLE ''celula 6t 0.5ghz''
+ escrita_0        leitura_0        escrita_1        leitura_1         
+ energia_vdd      temper           alter#            
+    failed         1.149e-09          failed        -2.852e-09        
+ -3.995e-14         25.0000        1                 

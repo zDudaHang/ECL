@@ -1,0 +1,38 @@
+* "simulator" "HSPICE" 
+* "version" "H-2013.03-SP1 32-BIT"
+* "format" "HSP"
+* "rundate" "16:47:33 05/23/2020 "
+* "netlist" "Array_Dice.txt "
+* "runtitle" "* topologia dice"
+* time =    0.            
+* temperature =   25.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ bit = 700.0000m       
++ bl = 641.1249m       
++ blb = 498.5169m       
++ pre =   0.            
++ vdd = 700.0000m       
++ we = 700.0000m       
++ wl =   0.            
++ wl_63 =   0.            
++ wl_64 =   0.            
++ x0 = 700.0000m       
++ x0_63 = 700.0000m       
++ x0_64 = 595.2442p       
++ x1 =  10.2169p       
++ x1_63 = 945.0192p       
++ x1_64 = 700.0000m       
++ x2 = 699.9878m       
++ x2_63 = 699.9873m       
++ x2_64 =   3.1917u       
++ x3 =   4.6039u       
++ x3_63 =   5.0678u       
++ x3_64 = 699.9873m       
++ xescrita.bitb =   1.1895u       
++ xescrita.web =   1.1557u       
++ xescrita.xe1 = 672.6780m       
++ xescrita.xe2 = 111.0480m       
+***   END: Saved Operating Point ***                     

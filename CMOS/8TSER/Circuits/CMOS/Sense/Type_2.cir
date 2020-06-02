@@ -1,0 +1,13 @@
+* Transistores de passagem
+Mmsa2	blb		sae		outb 	gnd		NMOS	w=w_sa_ac	l=length
+Mmsa1	bl		sae		out		gnd		NMOS	w=w_sa_ac	l=length
+Mmsa7   xsa1	sae		vdd		vdd		PMOS	w=w_sa_ac	l=length
+
+* Inversor 1
+Mmsa3	xsa1   	out   	outb  	vdd 	PMOS  	w=w_sa_pu  l=length
+Mmsa5	outb	out		gnd 	gnd   	NMOS	w=w_sa_pd	l=length
+
+* Inversor 2
+Mmsa4	xsa1	outb	out		vdd		PMOS	w=w_sa_pu	l=length
+Mmsa6	out		outb	gnd  	gnd		NMOS	w=w_sa_pd	l=length
+	

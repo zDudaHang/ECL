@@ -1,0 +1,28 @@
+.include ./Circuits/CMOS/Cell/SRAM_8T-SER.cir
+.include ./Circuits/CMOS/Signal/SNM.cir
+
+.include ./Circuits/CMOS/Models/16nm_HP.pm
+    
+* Tecnologia
+.param length = 16n
+.param w_min  = 32n
+
+* Tensão de Alimentação
+.param supply = 0.7
+
+* Dimensionamento da Célula
+.param w_pd = 50n
+.param w_pu = 40n
+.param w_ac = 45n
+
+* Tipo de simulação	
+.dc Vvn 0 'supply' 'supply*0.001'	
+
+* Mensuração da energia		
+.control		
+	run
+	wrdata snm.txt q2b
+	quit
+.endc
+
+.end

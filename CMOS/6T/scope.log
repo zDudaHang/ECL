@@ -1,0 +1,17 @@
+Mdi:ArrangeIcons
+Mdi:FullSize
+ScopeSigMgr:loadpffile /home/mariahang/ECL/CMOS/6T/6t.tr0 1 openonly
+# PF:1
+wm geometry .sigmgr._PF:1 288x349+1417+373
+wm geometry .sigmgr._PF:1 288x349+1417+368
+wm geometry .sigmgr._PF:1 288x349+1417+357
+wm geometry .sigmgr._PF:1 288x349+1438+344
+wm geometry .sigmgr._PF:1 288x349+1451+324
+wm geometry .sigmgr._PF:1 288x349+1461+311
+wm geometry .sigmgr._PF:1 288x349+1484+277
+wm geometry .sigmgr._PF:1 288x349+1497+261
+wm geometry .sigmgr._PF:1 288x349+1504+252
+wm geometry .sigmgr._PF:1 288x349+1509+246
+wm geometry .sigmgr._PF:1 288x349+1510+243
+wm geometry .sigmgr._PF:1 288x349+1511+242
+wm geometry .sigmgr._PF:1 288x349+1521+250

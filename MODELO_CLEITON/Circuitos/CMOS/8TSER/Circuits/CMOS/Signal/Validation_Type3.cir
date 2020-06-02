@@ -1,0 +1,49 @@
+* Fontes DC
+Vcell	vcell	gnd		DC	supply
+Vvdd	vdd		gnd		DC	supply
+Vwl2	wl2		gnd		DC	0
+Vwl22	wl22	gnd		DC	0
+
+
+* Ondas
+
+Vbit 	bit 	gnd 	PWL ('0*ts_w'              0       '2*unit'              0   
+							+ '2*unit+slope'        supply  '4*unit'              supply)
+
+Vwe   	we  	gnd		PWL ('0*ts_w'              0       '2*ts_w'              0   
+							+ '2*ts_w+slope'        supply  '5*ts_w'              supply   
+							+ '5*ts_w+slope'        0       '2*unit+2*ts_w'       0
+							+ '2*unit+2*ts_w+slope' supply  '2*unit+5*ts_w'       supply
+							+ '2*unit+5*ts_w+slope' 0        '4*unit'             0)
+
+
+Vwl 	wl  	gnd		PWL ('0*ts_w'               0       '3*ts_w'             0 
+							+ '3*ts_w+slope'        supply  '4*ts_w'             supply 
+							+ '4*ts_w+slope'        0       '2*unit+3*ts_w'      0
+							+ '2*unit+3*ts_w+slope' supply  '2*unit+4*ts_w'      supply
+							+ '2*unit+4*ts_w+slope' 0       '4*unit'             0)
+
+Vrwl 	rwl  	gnd		PWL ('0*ts_w'               0       'unit+2*ts_r'         0 
+							+ 'unit+2*ts_r+slope'   supply  'unit+3*ts_r'         supply 
+							+ 'unit+3*ts_r+slope'   0       '3*unit+2*ts_r'       0
+							+ '3*unit+2*ts_r+slope' supply  '3*unit+3*ts_r'       supply
+							+ '3*unit+3*ts_r+slope' 0       '4*unit'              0)
+
+
+
+Vpre 	pre 	gnd		PWL ('0*ts_w'              0       'ts_w'                0 
+							+ 'ts_w+slope'          supply  '6*ts_w'              supply 
+							+ '6*ts_w+slope'        0       'unit+ts_r'           0
+							+ 'unit+ts_r+slope'     supply  'unit+6*ts_r'         supply
+							+ 'unit+6*ts_r+slope'   0       '2*unit+ts_w'		 0
+							+ '2*unit+ts_w+slope'   supply  '2*unit+6*ts_w'       supply
+							+ '2*unit+6*ts_w+slope' 0       '3*unit+ts_r'         0
+							+ '3*unit+ts_r+slope'   supply  '3*unit+6*ts_r'       supply
+							+ '3*unit+6*ts_r+slope' 0       '4*unit'				 0)
+
+	
+Vsae 	sae 	gnd		PWL ('0*ts_w'              0       'unit+4*ts_r'         0 
+                            + 'unit+4*ts_r+slope'   supply  'unit+5*ts_r'         supply
+                            + 'unit+5*ts_r+slope'   0       '3*unit+4*ts_r'       0
+                            + '3*unit+4*ts_r+slope' supply  '3*unit+5*ts_r'       supply
+                            + '3*unit+5*ts_r+slope' 0       '4*unit'              0)

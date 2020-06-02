@@ -1,0 +1,28 @@
+* "simulator" "HSPICE" 
+* "version" "H-2013.03-SP1 32-BIT"
+* "format" "HSP"
+* "rundate" "20:58:15 05/17/2020 "
+* "netlist" "dice_robustez.txt "
+* "runtitle" "* circuito dice"
+* time =    0.            
+* temperature =   25.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ bit =  53.7717m       
++ bl = 699.9992m       
++ blb = 699.9994m       
++ pre =  76.9181m       
++ vdd = 700.0000m       
++ we =  37.5923m       
++ wl =   0.            
++ x0 = 365.0277f       
++ x1 = 700.0000m       
++ x2 = 211.2329n       
++ x3 = 699.9998m       
++ xescrita.bitb = 699.9989m       
++ xescrita.web = 699.9994m       
++ xescrita.xe1 = 619.0203n       
++ xescrita.xe2 = 699.9988m       
+***   END: Saved Operating Point ***                     

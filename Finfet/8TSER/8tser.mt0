@@ -1,0 +1,6 @@
+$DATA1 SOURCE='HSPICE' VERSION='H-2013.03-SP1 32-BIT'
+.TITLE ''8t-ser 0.5ghz''
+ escrita_0        leitura_0        escrita_1        leitura_1         
+ energia_vdd      temper           alter#            
+  6.267e-12        5.810e-10       -5.599e-10        5.811e-10        
+ -3.128e-14         25.0000        1                 

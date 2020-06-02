@@ -1,0 +1,6 @@
+$DATA1 SOURCE='HSPICE' VERSION='H-2013.03-SP1 32-BIT'
+.TITLE '* topologia dice'
+ escrita_0        leitura_0        escrita_1        leitura_1         
+ energia_vdd      temper           alter#            
+  8.061e-12        2.300e-11        1.399e-11        1.691e-11        
+ -6.759e-14         25.0000        1                 

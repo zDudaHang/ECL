@@ -1,0 +1,162 @@
+* TOPOLOGIA 8T-SER
+
+.TITLE 'ROBUSTEZ ARRAY 8T-SER'
+
+.OPTION POST = 2
+
+.include 7nm_TT.pm
+
+.include Leitura.cir
+.include Escrita.cir
+.include PreCarga.cir
+
+* PARAMETROS
+.param fin_auxiliares = 1
+.param fin = 1
+.param num_cel = 128
+
+* TENSAO DO CIRCUITO
+.param supply = 0.7
+
+* TEMPOS
+.param clock = 0.5g
+.param slope = '0.01*period'
+.param period = '1/clock'
+.param step = 'period/7'
+
+.global supply gnd
+
+* SUPPLY DO CIRCUITO
+Vvdd vdd gnd DC supply
+
+* SIMULACAO
+Vwl2 wl2 gnd PWL(0ns 0)
+Vwl22 wl22 gnd PWL(0ns 0)
+
+* * === HOLD SEU
+* Vwl wl gnd PWL(0ns 0)
+* Vbit bit gnd PWL(0ns 0)
+* Vwe we gnd PWL(0ns 0)
+* Vpre pre gnd PWL (0ns 0)
+* Vsae sae gnd PWL (0ns supply)
+* Vbl bl gnd PWL (0ns 0)
+* Vblb blb gnd PWL (0ns 0)
+*
+* * === READ SEU:
+* Vbit bit gnd PWL(0ns supply)
+*
+* Vwl wl gnd PWL(0ns 0 '3*step' 0 '3*step + slope' supply '4*step' supply '4*step + slope' 0
+* + 'period + 3*step' 0 'period + 3*step + slope' supply 'period + 4*step' supply 'period + 4*step + slope' 0)
+*
+* Vwe we gnd PWL(0ns supply 'period' supply 'period + slope' 0)
+*
+* Vpre 	pre	    gnd		PWL ( '0*step'              supply  'step'                supply
+* + 'step+slope'          0       '6*step'              0
+* + '6*step+slope'        supply  'period+step'           supply
+* + 'period+step+slope'     0       'period+6*step'         0
+* + 'period+6*step+slope'   supply)
+*
+* Vsae 	sae	    gnd		PWL ( '0*step'              supply  'period+4*step'         supply
+* + 'period+4*step+slope'   0       'period+5*step'         0
+* + 'period+5*step+slope'   supply)
+*
+* * === WRITE SEU:
+* Vbit bit gnd PWL(0ns supply 'period' supply 'period + slope' 0)
+*
+* Vwl wl gnd PWL(0ns 0 '3*step' 0 '3*step + slope' supply '4*step' supply '4*step + slope' 0
+* + 'period + 3*step' 0 'period + 3*step + slope' supply 'period + 4*step' supply 'period + 4*step + slope' 0)
+*
+* Vwe we gnd PWL(0ns supply '2*period' supply '2*period + slope' 0)
+*
+* Vpre 	pre	    gnd		PWL ( '0*step'              supply  'step'                supply
+* + 'step+slope'          0       '6*step'              0
+* + '6*step+slope'        supply  'period+step'           supply
+* + 'period+step+slope'     0       'period+6*step'         0
+* + 'period+6*step+slope'   supply)
+*
+* Vsae sae gnd PWL(0ns supply)
+* DECLARACAO DO CIRCUITO
+
+*  CIRCUITOS AUXILIARES
+
+* PRE-CARGA
+Xprecarga pre bl blb vdd gnd pre_carga fin=fin_auxiliares
+
+* ESCRITA
+Xescrita  bit we bl blb vdd gnd escrita fin=fin_auxiliares
+
+* LEITURA
+Xleitura sae bl blb out outb vdd gnd leitura fin=fin_auxiliares
+
+* === CELULA
+*Pull-UP
+Mp1     vdd     q2      qb     vdd   pmos_rvt   nfin = fin
+Mp2     q         q2b   vdd    vdd   pmos_rvt   nfin = fin
+Mp3     vdd     q2b     q2     vdd   pmos_rvt   nfin = fin
+Mp4     q2b       q2    vdd    vdd   pmos_rvt   nfin = fin
+
+*Access WL
+Mn1     wl        q       qb     gnd     nmos_rvt   nfin = fin
+Mn2     q         qb      wl     gnd     nmos_rvt   nfin = fin
+
+*Access Bitlines
+Mn3     bl        qb      q2     gnd     nmos_rvt   nfin = fin
+Mn4     q2b       q       blb    gnd     nmos_rvt   nfin = fin
+
+* === 63 CELULAS COM VALOR 1
+*Pull-UP
+Mpcells1     vdd        q2cells      qbcells     vdd   pmos_rvt   nfin = 'fin*((num_cel/2)-1)'
+Mpcells2     qcells     q2bcells     vdd         vdd   pmos_rvt   nfin = 'fin*((num_cel/2)-1)'
+Mpcells3     vdd        q2bcells     q2cells     vdd   pmos_rvt   nfin = 'fin*((num_cel/2)-1)'
+Mpcells4     q2bcells   q2cells      vdd         vdd   pmos_rvt   nfin = 'fin*((num_cel/2)-1)'
+
+*Access WL
+Mncells1     wl2        qcells       qbcells     gnd     nmos_rvt   nfin = 'fin*((num_cel/2)-1)'
+Mncells2     qcells     qbcells      wl2         gnd     nmos_rvt   nfin = 'fin*((num_cel/2)-1)'
+
+*Access Bitlines
+Mncells3     bl        qbcells      q2cells     gnd     nmos_rvt   nfin = 'fin*((num_cel/2)-1)'
+Mncells4     q2bcells   qcells       blb         gnd     nmos_rvt   nfin = 'fin*((num_cel/2)-1)'
+
+* === 64 CELULAS COM VALOR 0
+*Pull-UP
+Mpcells11    vdd        q2cells2     qbcells2    vdd   pmos_rvt   nfin = 'fin*(num_cel/2)'
+Mpcells22    qcells2    q2bcells2    vdd         vdd   pmos_rvt   nfin = 'fin*(num_cel/2)'
+Mpcells33    vdd        q2bcells2    q2cells2    vdd   pmos_rvt   nfin = 'fin*(num_cel/2)'
+Mpcells44    q2bcells2  q2cells2     vdd         vdd   pmos_rvt   nfin = 'fin*(num_cel/2)'
+
+*Access WL
+Mncells11    wl22       qcells2      qbcells2    gnd     nmos_rvt   nfin = 'fin*(num_cel/2)'
+Mncells22    qcells2    qbcells2     wl22        gnd     nmos_rvt   nfin = 'fin*(num_cel/2)'
+
+*Access Bitlines
+Mncells33    bl         qbcells2     q2cells2    gnd     nmos_rvt   nfin = 'fin*(num_cel/2)'
+Mncells44    q2bcells2   qcells2       blb        gnd     nmos_rvt   nfin = 'fin*(num_cel/2)'
+
+
+* CAPACITORES
+Cload	out gnd	1f
+Cload2	outb gnd 1f
+
+* VALORES INICIAIS
+* === CELULA:
+.ic v(q2) = supply
+.ic v(q2b) = 0
+
+* === 63 CELULAS COM VALOR 1:
+.ic v(q2cells) = supply
+.ic v(q2bcells) = 0
+
+* === 64 CELULAS COM VALOR 0:
+.ic v(q2cells2) = 0
+.ic v(q2bcells2) = supply
+
+* RESULTADOS
+* Teste de resistencia a falhas
+* 101 : nodo gnd
+* 010 : gnd nodo
+Iexp qb gnd exp(0 5682u 0.1n 10p 0.10001n 320p)
+
+.tran 0.01ns '4*period'
+
+.end

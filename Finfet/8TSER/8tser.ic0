@@ -1,0 +1,32 @@
+* "simulator" "HSPICE" 
+* "version" "H-2013.03-SP1 32-BIT"
+* "format" "HSP"
+* "rundate" "14:41:12 03/07/2020 "
+* "netlist" "8tser.cir "
+* "runtitle" "'8t-ser 0.5ghz'"
+* time =    0.            
+* temperature =   25.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ bit =   0.            
++ bl =  23.9171m       
++ blb =  61.2720m       
++ out =  23.9169m       
++ outb =  61.2719m       
++ pre = 700.0000m       
++ q = 699.9998m       
++ q2 = 700.0000m       
++ q2b = 100.5151n       
++ qb = 115.7175n       
++ sae = 700.0000m       
++ vdd = 700.0000m       
++ we = 700.0000m       
++ wl =   0.            
++ xescrita.bitb = 699.9998m       
++ xescrita.web = 115.7344n       
++ xescrita.xe1 =  11.8821m       
++ xescrita.xe2 = 318.4830m       
++ xleitura.xsa1 =  66.9170m       
+***   END: Saved Operating Point ***                     

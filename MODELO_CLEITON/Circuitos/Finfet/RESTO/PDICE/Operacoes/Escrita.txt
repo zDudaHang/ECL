@@ -1,0 +1,29 @@
+* CIRCUITO DE ESCRITA
+
+* CIRCUITO
+
+.subckt escrita bit we bl blb vdd gnd fin=superior_fin
+
+* INVERSOR DO BIT
+MP_BIT vdd bit bitb vdd pmos_rvt nfin = fin
+MN_BIT bitb bit gnd gnd nmos_rvt nfin = fin
+
+* INVERSOR DO WRITE ENABLE (WE)
+MP_WE vdd we web vdd pmos_rvt nfin = fin
+MN_WE web we gnd gnd nmos_rvt nfin = fin
+
+* ESCRITA EM BL
+MN0 gnd bitb Q0 gnd nmos_rvt nfin = fin
+MN1 Q0 we bl gnd nmos_rvt nfin = fin
+
+MP0 vdd bitb Q0 vdd pmos_rvt nfin = fin
+MP1 Q0 web bl vdd pmos_rvt nfin = fin
+
+* ESCRITA EM BLB
+MN2 gnd bit Q1 gnd nmos_rvt nfin = fin
+MN3 Q1 we blb gnd nmos_rvt nfin = fin
+
+MP2 vdd bit Q1 vdd pmos_rvt nfin = fin
+MP3 Q1 web blb vdd pmos_rvt nfin = fin
+
+.ends escrita

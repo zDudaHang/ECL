@@ -1,0 +1,161 @@
+Mdi:FullSize
+ScopeSigMgr:loadpffile /home/mariahang/ECL/Finfet/DICE/Robustez_Array_Dice.tr0 1 openonly
+# PF:1
+wm geometry .sigmgr._PF:1 288x349+670+372
+wm geometry .sigmgr._PF:1 288x349+665+365
+wm geometry .sigmgr._PF:1 288x349+658+353
+wm geometry .sigmgr._PF:1 288x349+650+339
+wm geometry .sigmgr._PF:1 288x349+635+313
+wm geometry .sigmgr._PF:1 288x349+623+294
+wm geometry .sigmgr._PF:1 288x349+621+287
+wm geometry .sigmgr._PF:1 288x349+619+282
+wm geometry .sigmgr._PF:1 288x349+619+279
+pf:read PF:1 v(x0)
+# WF:1:1
+Graph addsignal WF:1:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:1 v(x1)
+# WF:1:2
+Graph addsignal WF:1:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+pf:read PF:1 v(x2)
+# WF:1:3
+Graph addsignal WF:1:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+pf:read PF:1 v(x3)
+# WF:1:4
+Graph addsignal WF:1:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+wm geometry .sigmgr._PF:1 288x349+629+287
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal3 add
+# Signal3
+Graph sigconfig Signal3 -region 2 -rgnindex 1
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph sigconfig Signal1 -region 0 -rgnindex 1
+Graph:DSel
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+GrXY:NewGraph
+# Graph1
+Graph:Select Graph0
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+GrCOMPLEX:NewGraph
+# Graph2
+Graph:Select Graph0
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+Graph:Select Graph0
+Graph axisconfig AxisY(0,0) -gridvis yes
+Graph axisconfig AxisY(1,0) -gridvis yes
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+Graph:DSel
+Graph:Select Graph0
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+Graph:DSel
+Graph:Select Graph0
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+Graph:DSel
+Graph:Select Graph0
+Graph:DSel
+Graph:DSel
+Graph:DSel
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}

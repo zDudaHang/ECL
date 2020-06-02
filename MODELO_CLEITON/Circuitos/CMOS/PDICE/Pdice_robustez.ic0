@@ -1,0 +1,32 @@
+* "simulator" "HSPICE" 
+* "version" "H-2013.03-SP1 32-BIT"
+* "format" "HSP"
+* "rundate" "20:39:49 12/10/2019 "
+* "netlist" "Pdice_robustez.txt "
+* "runtitle" "* topologia pdice"
+* time =    0.            
+* temperature =   25.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ between10_9 = 404.7413m       
++ between7_8 =  39.7484m       
++ bit = 401.8076m       
++ bl = 715.8101m       
++ blb = 798.6049m       
++ pre = 146.5620m       
++ rwl = 502.4200m       
++ vdd = 900.0000m       
++ we = 493.0864m       
++ wl =   0.            
++ wwl = 695.0829m       
++ x0 =  10.9848p       
++ x1 = 900.0000m       
++ x2 =  11.0012p       
++ x3 = 900.0000m       
++ xescrita.bitb = 531.2163m       
++ xescrita.q0 = 262.8086m       
++ xescrita.q1 = 724.3654m       
++ xescrita.web = 125.4861m       
+***   END: Saved Operating Point ***                     

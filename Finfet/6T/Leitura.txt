@@ -1,0 +1,26 @@
+* CIRCUITO DE LEITURA
+
+* CIRCUITO
+
+.subckt leitura sae bl blb out outb vdd gnd fin=superior_fin
+
+* TRANSISTORES DE PASSAGEM
+MP2 bl sae out vdd pmos_rvt nfin = fin
+MP4 blb sae outb vdd pmos_rvt nfin = fin
+
+* INVERSOR 1
+MP0 vdd qb q vdd pmos_rvt nfin = fin
+MN0 q qb Q0 gnd nmos_rvt nfin = fin
+
+* INVERSOR 2
+MP1 vdd q qb vdd pmos_rvt nfin = fin
+MN1 qb q Q0 gnd nmos_rvt nfin = fin
+
+* TRANSISTOR DE PASSAGEM GND
+MN3 Q0 sae gnd gnd nmos_rvt nfin = fin
+
+* CAPACITORES
+Cload out gnd 1f
+Cload2 outb gnd 1f
+
+.ends leitura

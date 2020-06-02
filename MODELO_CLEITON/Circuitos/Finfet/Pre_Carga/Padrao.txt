@@ -1,0 +1,11 @@
+* CIRCUITO DE PRE-CARGA
+
+* DECLARANDO COMO SUBCIRCUITO
+* .subckt pre_carga pre bl blb svdd gnd fin=superior_fin
+
+MPre0 vdd pre bl vdd pmos_rvt nfin = fin_auxiliares
+MPre2 vdd pre blb vdd pmos_rvt nfin = fin_auxiliares
+MPre1 bl pre blb vdd pmos_rvt nfin = fin_auxiliares
+
+* TERMINANDO DECLARACAO DO SUBCIRCUITO
+* .ends pre_carga

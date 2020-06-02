@@ -1,0 +1,28 @@
+* "simulator" "HSPICE" 
+* "version" "H-2013.03-SP1 32-BIT"
+* "format" "HSP"
+* "rundate" "17:58:51 02/09/2020 "
+* "netlist" "Dice_robustez.txt "
+* "runtitle" "'dice: teste de robustez 3a'"
+* time =    0.            
+* temperature =   25.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ bit = 407.6291m       
++ bl = 781.8050m       
++ blb = 814.3430m       
++ pre = 142.1873m       
++ vdd = 900.0000m       
++ we = 506.1485m       
++ wl =   0.            
++ x0 = 900.0000m       
++ x1 =  26.0115p       
++ x2 = 900.0000m       
++ x3 =  26.0115p       
++ xescrita.bitb = 504.7735m       
++ xescrita.web =  82.6206m       
++ xescrita.xe1 = 540.0487m       
++ xescrita.xe2 = 743.7774m       
+***   END: Saved Operating Point ***                     

@@ -1,0 +1,42 @@
+* "simulator" "HSPICE" 
+* "version" "H-2013.03-SP1 32-BIT"
+* "format" "HSP"
+* "rundate" "16:37:35 03/18/2020 "
+* "netlist" "Array_8tser.cir "
+* "runtitle" "'array 8t-ser'"
+* time =    0.            
+* temperature =   25.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ bit =   0.            
++ bl =  37.2217u       
++ blb =   2.4719m       
++ out =  37.2778u       
++ outb =   2.4719m       
++ pre = 700.0000m       
++ q = 699.9998m       
++ q2 = 700.0000m       
++ q2b =   4.2663n       
++ q2bcells = 268.7483n       
++ q2bcells2 = 700.0000m       
++ q2cells = 700.0000m       
++ q2cells2 =   4.1289n       
++ qb = 115.7175n       
++ qbcells = 115.7135n       
++ qbcells2 = 699.9998m       
++ qcells = 699.9998m       
++ qcells2 = 115.7135n       
++ sae = 700.0000m       
++ vdd = 700.0000m       
++ we = 700.0000m       
++ wl =   0.            
++ wl2 =   0.            
++ wl22 =   0.            
++ xescrita.bitb = 699.9998m       
++ xescrita.web = 115.6817n       
++ xescrita.xe1 =  18.6686u       
++ xescrita.xe2 = 237.8698m       
++ xleitura.xsa1 =  20.1867m       
+***   END: Saved Operating Point ***                     

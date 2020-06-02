@@ -1,0 +1,56 @@
+* CIRCUITO 6T
+.TITLE 'SNM 6T 0.5GHz'
+
+.OPTION POST = 2
+.PRINT DC v(q) v(qb) v(bl) v(blb)
+
+.include 7nm_TT.pm
+
+* PARAMETROS
+.param fin = 1
+
+* TENSAO DO CIRCUITO
+.param supply = 0.7
+
+* FONTE DO CIRCUITO
+Vvdd vdd gnd DC supply
+
+* ==================== SNM
+* Vvn q gnd DC 0
+Vvn qb gnd DC 0
+
+* ==== HOLD
+* WL = 0
+* Vwl wl gnd DC 0
+
+* ==== READ 0
+* WL = 1 BL e BL = 1
+* Vwl wl gnd DC supply
+* Vbl bl gnd DC supply
+* Vblb blb gnd DC supply
+
+* ==== WRITE 1
+* WL = 1
+Vwl wl gnd DC supply
+Vbl bl gnd DC 0
+Vblb blb gnd DC supply
+
+* DECLARACAO DO CIRCUITO
+
+* 6T
+
+* PRIMEIRO INVERSOR
+MP0 vdd qb q vdd pmos_rvt nfin = fin
+MN0 q qb gnd gnd nmos_rvt nfin = fin
+
+* SEGUNDO INVERSOR
+MP1 vdd q qb vdd pmos_rvt nfin = fin
+MN1 qb q gnd gnd nmos_rvt nfin = fin
+
+* TRANSISTORES DE PASSAGEM
+MN2 bl wl q gnd nmos_rvt nfin = fin
+MN3 blb wl qb gnd nmos_rvt nfin = fin
+
+.DC Vvn 0 'supply' 'supply*0.001'
+
+.end

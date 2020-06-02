@@ -1,0 +1,71 @@
+* CIRCUITO 6T
+
+.options post = 2
+
+.include 7nm_TT.pm
+
+.include Escrita.txt
+.include Leitura.txt
+.include PreCarga.txt
+
+* PARAMETROS
+.param fin = 1
+.param fin_auxiliares = 1
+
+* TENSAO DO CIRCUITO
+.param supply = 0.7
+
+* TEMPO
+.param clock = 1g
+.param slope = '0.01*period'
+.param period = '1/clock'
+.param step = 'period/7'
+
+ .global supply gnd
+
+* FONTE DO CIRCUITO
+Vvdd vdd gnd DC supply
+
+* SIMULACAO
+
+Vwl wl gnd PWL(0ns 0)
+
+* DECLARACAO DO CIRCUITO
+
+* CIRCUITOS AUXILIARES
+
+* PRE-CARGA
+Xprecarga pre bl blb vdd gnd pre_carga fin=fin_auxiliares
+
+* LEITURA
+Xleitura  sae bl blb out outb vdd gnd leitura fin=fin_auxiliares
+
+* ESCRITA
+Xescrita  bit we bl blb vdd gnd escrita fin=fin_auxiliares
+
+* 6T
+
+* INVERSOR 1
+M3 vdd qb q vdd pmos_rvt nfin = fin
+M1 q qb gnd gnd nmos_rvt nfin = fin
+
+* INVERSOR 2
+M4 vdd q qb vdd pmos_rvt nfin = fin
+M2 qb q gnd gnd nmos_rvt nfin = fin
+
+* TRANSISTORES DE PASSAGEM
+M5 q WL bl gnd nmos_rvt nfin = fin
+M6 blb wl qb gnd nmos_rvt nfin = fin
+
+* INICIALIZANDO O VALOR DE Q E QB
+.ic v(q) = supply
+.ic v(qb) = 0
+
+* TESTE DE ROBUSTEZ
+* 010 : gnd nodo
+* 101 : nodo gnd
+Iexp qb gnd exp(0 1 0.1n 10p 0.10001ns 320p)
+
+.tran 0.01ns '4*period'
+
+.end

@@ -1,0 +1,28 @@
+* "simulator" "HSPICE" 
+* "version" "H-2013.03-SP1 32-BIT"
+* "format" "HSP"
+* "rundate" "08:43:55 07/16/2019 "
+* "netlist" "Ler1.txt "
+* "runtitle" "* circuito dice"
+* time =    0.            
+* temperature =   25.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ bit =   0.            
++ bl = 699.9995m       
++ blb = 699.9997m       
++ pre =   0.            
++ vdd = 700.0000m       
++ we =   0.            
++ wl =   0.            
++ x0 = 700.0000m       
++ x1 = 211.2329n       
++ x2 = 699.9998m       
++ x3 = 211.2339n       
++ xescrita.bitb = 699.9998m       
++ xescrita.out_bl = 326.6904n       
++ xescrita.out_blb = 699.9998m       
++ xescrita.web = 699.9998m       
+***   END: Saved Operating Point ***                     

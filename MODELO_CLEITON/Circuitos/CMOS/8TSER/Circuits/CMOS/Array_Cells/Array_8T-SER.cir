@@ -1,0 +1,25 @@
+* Netlist da Célula 8T-SER
+    *Pull-UP
+    Mpcells1     vdd        q2cells      qbcells     vdd   PMOS   w='w_pu*((num_cell/2)-1)'   l=length
+    Mpcells2     qcells     q2bcells     vdd         vdd   PMOS   w='w_pu*((num_cell/2)-1)'   l=length
+    Mpcells3     vdd        q2bcells     q2cells     vdd   PMOS   w='w_pu*((num_cell/2)-1)'   l=length
+    Mpcells4     q2bcells   q2cells      vdd         vdd   PMOS   w='w_pu*((num_cell/2)-1)'   l=length
+    *Access WL
+    Mncells1     wl2        qcells       qbcells     gnd   NMOS   w='w_pd*((num_cell/2)-1)'   l=length
+    Mncells2     qcells     qbcells      wl2         gnd   NMOS   w='w_pd*((num_cell/2)-1)'   l=length
+    *Access Bitlines
+    Mncells3     bl         qbcells      q2cells     gnd   NMOS   w='w_ac*((num_cell/2)-1)'   l=length
+    Mncells4     q2bcells   qcells       blb         gnd   NMOS   w='w_ac*((num_cell/2)-1)'   l=length
+
+* Netlist da Célula 8T-SER
+    *Pull-UP
+    Mpcells11    vdd        q2cells2     qbcells2    vdd   PMOS   w='w_pu*(num_cell/2)'   l=length
+    Mpcells22    qcells2    q2bcells2    vdd         vdd   PMOS   w='w_pu*(num_cell/2)'   l=length
+    Mpcells33    vdd        q2bcells2    q2cells2    vdd   PMOS   w='w_pu*(num_cell/2)'   l=length
+    Mpcells44    q2bcells2  q2cells2     vdd         vdd   PMOS   w='w_pu*(num_cell/2)'   l=length
+    *Access WL
+    Mncells11    wl22       qcells2      qbcells2    gnd   NMOS   w='w_pd*(num_cell/2)'   l=length
+    Mncells22    qcells2    qbcells2     wl22        gnd   NMOS   w='w_pd*(num_cell/2)'   l=length
+    *Access Bitlines
+    Mncells33    bl         qbcells2     q2cells2    gnd   NMOS   w='w_ac*(num_cell/2)'   l=length
+    Mncells44    q2bcells2  qcells2      blb         gnd   NMOS   w='w_ac*(num_cell/2)'   l=length

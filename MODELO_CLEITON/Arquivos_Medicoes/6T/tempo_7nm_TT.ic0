@@ -1,0 +1,30 @@
+* "simulator" "HSPICE" 
+* "version" "H-2013.03-SP1 32-BIT"
+* "format" "HSP"
+* "rundate" "14:28:05 01/24/2020 "
+* "netlist" "tempo_7nm_TT.txt "
+* "runtitle" "'celula 6t 0.5ghz'"
+* time =    0.            
+* temperature =   25.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ bit =   0.            
++ bitb = 699.9998m       
++ bl = 539.1206m       
++ blb = 642.7974m       
++ out = 539.1206m       
++ outb = 642.7974m       
++ pre =   0.            
++ q = 700.0000m       
++ qb = 722.3855f       
++ sae =   0.            
++ vdd = 700.0000m       
++ we = 700.0000m       
++ web = 116.0307n       
++ wl =   0.            
++ xe1 = 208.5682m       
++ xe2 = 672.1165m       
++ xsa1 =  95.5116n       
+***   END: Saved Operating Point ***                     

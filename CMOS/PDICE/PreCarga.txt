@@ -1,0 +1,11 @@
+* CIRCUITO DE PRE-CARGA
+
+* CIRCUITO
+
+.subckt pre_carga pre bl blb vdd gnd width=superior_w length=superior_l
+
+MP0 vdd pre bl vdd PMOS w=width l=length
+MP2 vdd pre blb vdd PMOS w=width l=length
+MP1 bl pre blb vdd PMOS w=width l=length
+
+.ends pre_carga

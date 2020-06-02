@@ -1,0 +1,11 @@
+* CIRCUITO DE PRE-CARGA
+
+* CIRCUITO
+
+.subckt pre_carga pre bl blb vdd gnd fin=superior_fin
+
+Mpc1	gnd		pre		bl		gnd		nmos_rvt	nfin = fin
+Mpc2	gnd		pre		blb		gnd		nmos_rvt	nfin = fin
+Mpc3	blb		pre		bl		gnd		nmos_rvt	nfin = fin
+
+.ends pre_carga

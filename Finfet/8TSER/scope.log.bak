@@ -1,0 +1,51 @@
+Mdi:FullSize
+ScopeSigMgr:loadpffile /home/mariahang/ECL/Finfet/8TSER/Robustez_Array_8tser.tr0 1 openonly
+# PF:1
+wm geometry .sigmgr._PF:1 288x349+673+372
+wm geometry .sigmgr._PF:1 288x349+680+223
+wm geometry .sigmgr._PF:1 288x349+680+222
+pf:read PF:1 v(q)
+# WF:1:1
+Graph addsignal WF:1:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:1 v(q2)
+# WF:1:2
+Graph addsignal WF:1:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+pf:read PF:1 v(q2b)
+# WF:1:3
+Graph addsignal WF:1:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+pf:read PF:1 v(qb)
+# WF:1:4
+Graph addsignal WF:1:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+wm geometry .sigmgr._PF:1 288x349+690+230
+wm geometry .sigmgr 472x250+557+216
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_8tser.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_8tser.tr0}}
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal11 add
+# Signal11
+Graph sigconfig Signal11 -region 0 -rgnindex 1
+Graph:DSel
+Graph itemselect Signal10 add
+# Signal10
+Graph sigconfig Signal10 -region 1 -rgnindex 1
+Graph:DSel
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_8tser.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_8tser.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_8tser.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_8tser.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_8tser.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_8tser.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_8tser.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_8tser.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_8tser.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_8tser.tr0}}
+Graph:Select Graph0
+Graph axisconfig AxisY(1,0) -gridvis yes
+Graph axisconfig AxisY(0,0) -gridvis yes
+Graph:DSel

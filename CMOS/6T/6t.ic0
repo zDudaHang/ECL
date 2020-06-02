@@ -1,0 +1,32 @@
+* "simulator" "HSPICE" 
+* "version" "H-2013.03-SP1 32-BIT"
+* "format" "HSP"
+* "rundate" "19:01:22 05/13/2020 "
+* "netlist" "6t.txt "
+* "runtitle" "* topologia 6t"
+* time =    0.            
+* temperature =   25.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ bit =   0.            
++ bl = 642.2141m       
++ blb = 814.8834m       
++ out = 642.2141m       
++ outb = 814.8834m       
++ pre =   0.            
++ q = 900.0000m       
++ qb =  10.3548u       
++ sae =   0.            
++ vdd = 900.0000m       
++ we = 900.0000m       
++ wl =   0.            
++ xleitura.q = 762.2324m       
++ xleitura.q0 = 582.0803m       
++ xleitura.qb = 762.2324m       
++ xescrita.bitb = 899.9793m       
++ xescrita.web =   3.8901u       
++ xescrita.xe1 = 197.0946m       
++ xescrita.xe2 = 859.2949m       
+***   END: Saved Operating Point ***                     

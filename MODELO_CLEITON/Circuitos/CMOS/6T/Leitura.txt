@@ -1,0 +1,26 @@
+* CIRCUITO DE LEITURA
+
+* CIRCUITO
+
+.subckt leitura sae bl blb out outb vdd gnd width=superior_w length=superior_l
+
+* TRANSISTORES DE PASSAGEM
+MP2 bl sae out vdd PMOS w=width l=length
+MP4 blb sae outb vdd PMOS w=width l=length
+
+* INVERSOR 1
+MP0 vdd qb q vdd PMOS w=width l=length
+MN0 q qb Q0 gnd NMOS w=width l=length
+
+* INVERSOR 2
+MP1 vdd q qb vdd PMOS w=width l=length
+MN1 qb q Q0 gnd NMOS w=width l=length
+
+* TRANSISTOR DE PASSAGEM GND
+MN3 Q0 sae gnd gnd NMOS w=width l=length
+
+* CAPACITORES
+Cload out gnd 1f
+Cload2 outb gnd 1f
+
+.ends leitura

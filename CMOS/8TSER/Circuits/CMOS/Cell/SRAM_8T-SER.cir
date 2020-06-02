@@ -1,0 +1,12 @@
+* Netlist da Célula 8T-SER
+    *Pull-UP
+    Mp1     vcell     q2      qb     vcell   PMOS   w=w_pu   l=length
+    Mp2     q         q2b     vcell  vcell   PMOS   w=w_pu   l=length
+    Mp3     vcell     q2b     q2     vcell   PMOS   w=w_pu   l=length
+    Mp4     q2b       q2      vcell  vcell   PMOS   w=w_pu   l=length
+    *Access WL
+    Mn1     wl        q       qb     gnd     NMOS   w=w_pd   l=length
+    Mn2     q         qb      wl     gnd     NMOS   w=w_pd   l=length
+    *Access Bitlines
+    Mn3     bl        qb      q2     gnd     NMOS   w=w_ac   l=length
+    Mn4     q2b       q       blb    gnd     NMOS   w=w_ac   l=length

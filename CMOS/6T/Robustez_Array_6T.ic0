@@ -1,0 +1,38 @@
+* "simulator" "HSPICE" 
+* "version" "H-2013.03-SP1 32-BIT"
+* "format" "HSP"
+* "rundate" "16:12:40 05/16/2020 "
+* "netlist" "Robustez_Array_6T.txt "
+* "runtitle" "'array 6t 32nm: teste de robustez'"
+* time =    0.            
+* temperature =   25.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ bit = 900.0000m       
++ bl = 814.2620m       
++ blb = 641.5756m       
++ out = 814.2620m       
++ outb = 641.5756m       
++ pre =   0.            
++ q =  28.6148p       
++ q0 = 900.0000m       
++ q0b =   7.5379u       
++ q1 =   2.1686n       
++ q1b = 899.9779m       
++ qb = 899.9791m       
++ sae =   0.            
++ vdd = 900.0000m       
++ we = 900.0000m       
++ wl =   0.            
++ wl0 =   0.            
++ wl1 =   0.            
++ xleitura.q = 762.2324m       
++ xleitura.q0 = 582.0803m       
++ xleitura.qb = 762.2324m       
++ xescrita.bitb =   3.9566u       
++ xescrita.web =   3.8901u       
++ xescrita.xe1 = 859.0130m       
++ xescrita.xe2 = 196.8472m       
+***   END: Saved Operating Point ***                     

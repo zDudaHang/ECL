@@ -1,0 +1,184 @@
+* TOPOLOGIA DICE
+
+.OPTION POST = 2
+
+.include 32nm_HP.pm
+
+.include Escrita.txt
+.include PreCarga.txt
+
+* NODO
+.param length = 32n
+
+* TENSAO DO CIRCUITO
+.param supply = 0.9
+
+* DIMENSOES DA CELULA
+.param width = '2*length'
+
+* CIRCUITOS AUXILIARES
+.param width_aux = 210n
+
+* TEMPO
+.param clock = 1g
+.param slope = '0.01*period'
+.param period = '1/clock'
+.param step = 'period/7'
+
+.global supply gnd
+
+* SUPPLY DO CIRCUITO
+Vvdd vdd gnd DC supply
+
+Vwl_63	 wl_63	 gnd	 PWL(0ns 0)
+Vwl_64	 wl_64	 gnd	 PWL(0ns 0)
+
+* SIMULACAO
+* === HOLD SEU:
+*Vwl	 wl	 gnd	 PWL(0ns 0)
+*Vbit	 bit	 gnd	 PWL(0ns 0)
+*Vwe	 we	 gnd	 PWL(0ns 0)
+*Vpre	 pre     gnd     PWL(0ns 0)
+*Vbl	 bl 	 gnd	 PWL(0ns supply)
+*Vblb	 blb	 gnd	 PWL(0ns supply)
+
+* === READ SEU: 1.44ns
+* VALOR INICIAL X0 = supply
+*Vbit bit gnd PWL(0ns supply)
+
+* VALOR INICIAL X0 = 0
+*Vbit bit gnd PWL(0ns 0)
+
+*Vwl wl gnd PWL(0ns 0 '3*step' 0 '3*step + slope' supply '4*step' supply '4*step + slope' 0
+*+ 'period + 3*step' 0 'period + 3*step + slope' supply 'period + 4*step' supply 'period + 4*step + slope' 0)
+
+*Vwe we gnd PWL(0ns supply 'period' supply 'period + slope' 0)
+
+*Vpre pre gnd PWL(0ns 0 'step' 0 'step + slope' supply '6*step' supply '6*step + slope' 0
+*+ 'period + step' 0 'period + step + slope' supply 'period + 6*step' supply 'period + 6*step + slope' 0)
+
+* === WRITE SEU: 1.58ns
+* VALOR INICIAL DE X0 = 0
+*Vbit bit gnd PWL(0ns 0 'period' 0 'period + slope' supply)
+* VALOR INICIAL DE X0 = supply
+Vbit bit gnd PWL(0ns supply 'period' supply 'period + slope' 0)
+
+Vwl wl gnd PWL(0ns 0 '3*step' 0 '3*step + slope' supply '4*step' supply '4*step + slope' 0
++ 'period + 3*step' 0 'period + 3*step + slope' supply 'period + 4*step' supply 'period + 4*step + slope' 0)
+
+Vwe we gnd PWL(0ns supply '2*period' supply '2*period + slope' 0)
+
+Vpre pre gnd PWL(0ns 0 'step' 0 'step + slope' supply '6*step' supply '6*step + slope' 0
++ 'period + step' 0 'period + step + slope' supply 'period + 6*step' supply 'period + 6*step + slope' 0)
+
+* DECLARACAO DO CIRCUITO
+
+*  CIRCUITOS AUXILIARES
+
+* PRE-CARGA
+Xprecarga pre bl blb vdd gnd pre_carga width=width_aux length=length
+
+* ESCRITA
+Xescrita  bit we bl blb vdd gnd escrita width=width_aux length=length
+
+* ====== ARRAY DA DICE
+
+* === CELULA TESTE COM VALOR 1
+
+* INVERSOR 0
+MP0 vdd x3 x0 vdd PMOS w = width l = length
+MN0 x0 x1 gnd gnd NMOS w = width l = length
+
+* INVERSOR 1
+MP1 vdd x0 x1 vdd PMOS w = width l = length
+MN1 x1 x2 gnd gnd NMOS w = width l = length
+
+* INVERSOR 2
+MP2 vdd x1 x2 vdd PMOS w = width l = length
+MN2 x2 x3 gnd gnd NMOS w = width l = length
+
+* INVERSOR 3
+MP3 vdd x2 x3 vdd PMOS w = width l = length
+MN3 x3 x0 gnd gnd NMOS w = width l = length
+
+* TRANSISTORES DE PASSAGEM
+MN5 x1 wl bl gnd NMOS w = width l = length
+MN7 x3 wl bl gnd NMOS w = width l = length
+
+MN6 x2 wl blb gnd NMOS w = width l = length
+MN4 x0 wl blb gnd NMOS w = width l = length
+
+* === 63 CELULAS COM VALOR 1
+
+* INVERSOR 0
+MP8 vdd x3_63 x0_63 vdd PMOS width = 'width*((num_cel/2)-1)' l = length
+MN8 x0_63 x1_63 gnd gnd NMOS width = 'width*((num_cel/2)-1)' l = length
+
+* INVERSOR 1
+MP9 vdd x0_63 x1_63 vdd PMOS width = 'width*((num_cel/2)-1)' l = length
+MN9 x1_63 x2_63 gnd gnd NMOS width = 'width*((num_cel/2)-1)' l = length
+
+* INVERSOR 2
+MP10 vdd x1_63 x2_63 vdd PMOS width = 'width*((num_cel/2)-1)' l = length
+MN10 x2_63 x3_63 gnd gnd NMOS width = 'width*((num_cel/2)-1)' l = length
+
+* INVERSOR 3
+MP11 vdd x2_63 x3_63 vdd PMOS width = 'width*((num_cel/2)-1)' l = length
+MN11 x3_63 x0_63 gnd gnd NMOS width = 'width*((num_cel/2)-1)' l = length
+
+* TRANSISTORES DE PASSAGEM
+MN13 x1_63 wl_63 bl gnd NMOS width = 'width*((num_cel/2)-1)' l = length
+MN14 x3_63 wl_63 bl gnd NMOS width = 'width*((num_cel/2)-1)' l = length
+
+MN15 x2_63 wl_63 blb gnd NMOS width = 'width*((num_cel/2)-1)' l = length
+MN12 x0_63 wl_63 blb gnd NMOS width = 'width*((num_cel/2)-1)' l = length
+
+* === 64 CELULAS COM VALOR 0
+
+* INVERSOR 0
+MP16 vdd x3_64 x0_64 vdd PMOS width = 'width*(num_cel/2)' l = length
+MN16 x0_64 x1_64 gnd gnd NMOS width = 'width*(num_cel/2)' l = length
+
+* INVERSOR 1
+MP17 vdd x0_64 x1_64 vdd PMOS width = 'width*(num_cel/2)' l = length
+MN17 x1_64 x2_64 gnd gnd NMOS width = 'width*(num_cel/2)' l = length
+
+* INVERSOR 2
+MP18 vdd x1_64 x2_64 vdd PMOS width = 'width*(num_cel/2)' l = length
+MN18 x2_64 x3_64 gnd gnd NMOS width = 'width*(num_cel/2)' l = length
+
+* INVERSOR 3
+MP19 vdd x2_64 x3_64 vdd PMOS width = 'width*(num_cel/2)' l = length
+MN19 x3_64 x0_64 gnd gnd NMOS width = 'width*(num_cel/2)' l = length
+
+* TRANSISTORES DE PASSAGEM
+MN21 x1_64 wl_64 bl gnd NMOS width = 'width*(num_cel/2)' l = length
+MN22 x3_64 wl_64 bl gnd NMOS width = 'width*(num_cel/2)' l = length
+
+MN23 x2_64 wl_64 blb gnd NMOS width = 'width*(num_cel/2)' l = length
+MN20 x0_64 wl_64 blb gnd NMOS width = 'width*(num_cel/2)' l = length
+
+* ====== INICIALIZACOES
+
+* === CELULA TESTE
+.ic v(x0) = supply
+.ic v(x1) = 0
+
+* === 63 CELULAS
+.ic v(x0_63) = supply
+.ic v(x1_63) = 0
+
+* === 64 CELULAS
+.ic v(x0_64) = 0
+.ic v(x1_64) = supply
+
+* RESULTADOS
+
+* TESTE DE ROBUSTEZ
+* 010 : gnd nodo
+* 101 : nodo gnd
+Iexp gnd x3 exp(0 0.5 1.58n 10p 1.58001n 320p)
+
+.tran 0.1ns '4*period'
+
+.end

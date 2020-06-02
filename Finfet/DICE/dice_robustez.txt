@@ -1,0 +1,79 @@
+* CIRCUITO DICE
+
+.options post = 2
+
+.include 7nm_TT.pm
+
+.include Escrita.txt
+.include PreCarga.txt
+
+* PARAMETROS
+.param fin = 1
+.param fin_auxiliares = 1
+
+* TENSAO DO CIRCUITO
+.param supply = 0.7
+
+* TEMPO
+.param clock = 1g
+.param period = '1/clock'
+
+ .global supply gnd
+
+* FONTE DO CIRCUITO
+Vvdd vdd gnd DC supply
+
+* SIMULACAO
+
+Vwl wl gnd PWL(0ns 0)
+
+* DECLARACAO DO CIRCUITO
+
+* CIRCUITOS AUXILIARES
+
+* PRE-CARGA
+Xprecarga pre bl blb vdd gnd pre_carga fin=fin_auxiliares
+
+* ESCRITA
+Xescrita  bit we bl blb vdd gnd escrita fin=fin_auxiliares
+
+* DICE
+
+* INVERSOR 0
+MP0 vdd x3 x0 vdd pmos_rvt nfin = fin
+MN0 x0 x1 gnd gnd nmos_rvt nfin = fin
+
+* INVERSOR 1
+MP1 vdd x0 x1 vdd pmos_rvt nfin = fin
+MN1 x1 x2 gnd gnd nmos_rvt nfin = fin
+
+* INVERSOR 2
+MP2 vdd x1 x2 vdd pmos_rvt nfin = fin
+MN2 x2 x3 gnd gnd nmos_rvt nfin = fin
+
+* INVERSOR 3
+MP3 vdd x2 x3 vdd pmos_rvt nfin = fin
+MN3 x3 x0 gnd gnd nmos_rvt nfin = fin
+
+* TRANSISTORES DE PASSAGEM
+MN5 x1 wl bl gnd nmos_rvt nfin = fin
+MN7 x3 wl bl gnd nmos_rvt nfin = fin
+
+MN6 x2 wl blb gnd nmos_rvt nfin = fin
+MN4 x0 wl blb gnd nmos_rvt nfin = fin
+
+Cblb blb gnd 20f
+Cbl bl gnd 20f
+
+* VALOR INICIAL DA CELULA
+.ic v(x0) = 0
+.ic v(x1) = supply
+
+* Teste de resistencia a falhas
+* 101 : nodo gnd
+* 010 : gnd nodo
+Iexp gnd x0 exp(0 100u 0.1n 10p 0.10001n 320p)
+
+.tran 0.01ns '4*period'
+
+.end

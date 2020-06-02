@@ -1,0 +1,68 @@
+***** HSPICE -- H-2013.03-SP1 32-BIT (May 29 2013) RHEL32 ******
+ Input File: dice_robustez.txt
+ lic:
+ lic: FLEXlm: v10.9.8
+ lic: USER:   mariahang            HOSTNAME: sagittarius-a
+ lic: HOSTID: 00039988e3a4         PID:      10992
+ lic: Using FLEXlm license file:
+ lic: 27020@localhost
+ lic: Checkout 1 hspice
+ lic: License/Maintenance for hspice will expire on 08-jun-2020/2019.06
+ lic: 2(in_use)/50(total) FLOATING license(s) on SERVER 27020@localhost
+ lic:
+ init: begin read circuit files,  cpu clock=  2.15E-01
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         ad
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         ad
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         behave
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         bjt
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         burr_brn
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         comlinear
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         dio
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         fet
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         lin_tech
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         pci
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         signet
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         ti
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         tline
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         xilinx
+       option runlvl
+       option post =     2.00
+ init: end read circuit files,  cpu clock=  2.19E-01 peak memory=       119 mb
+ init: begin check errors,  cpu clock=  2.19E-01
+ **warning**  No DC path to ground from node        0:                bit
+ init: end check errors,  cpu clock=  2.55E-01 peak memory=       119 mb
+ init: begin setup matrix, pivot=     0 cpu clock=  2.55E-01
+       establish matrix -- done,  cpu clock=  2.55E-01 peak memory=       119 mb
+       re-order matrix -- done,  cpu clock=  2.56E-01 peak memory=       119 mb
+ init: end setup matrix,  cpu clock=  2.56E-01 peak memory=       119 mb
+ dcop: begin dcop,  cpu clock=  2.56E-01
+ dcop: end dcop,  cpu clock=  2.84E-01 peak memory=       119 mb  tot_iter=      57
+ output: dice_robustez.tr0
+ sweep: tran tran0    begin, stop_t=  4.00E-09 #sweeps= 401 cpu clock=  2.84E-01
+ tran: time= 5.0034E-10 tot_iter=     228 conv_iter=      51 cpu clock= 3.47E-01
+ tran: time= 8.2145E-10 tot_iter=     237 conv_iter=      54 cpu clock= 3.51E-01
+ tran: time= 1.2377E-09 tot_iter=     558 conv_iter=      97 cpu clock= 4.42E-01
+ tran: time= 1.6928E-09 tot_iter=     570 conv_iter=     101 cpu clock= 4.45E-01
+ tran: time= 2.0010E-09 tot_iter=     576 conv_iter=     103 cpu clock= 4.47E-01
+ tran: time= 2.5994E-09 tot_iter=     582 conv_iter=     106 cpu clock= 4.48E-01
+ tran: time= 2.9994E-09 tot_iter=     586 conv_iter=     108 cpu clock= 4.49E-01
+ tran: time= 3.3994E-09 tot_iter=     590 conv_iter=     110 cpu clock= 4.50E-01
+ tran: time= 3.7994E-09 tot_iter=     594 conv_iter=     112 cpu clock= 4.50E-01
+ tran: time= 4.0000E-09 tot_iter=     596 conv_iter=     113 cpu clock= 4.50E-01
+ sweep: tran tran0    end,  cpu clock=  4.51E-01 peak memory=       119 mb
+>info:         ***** hspice job concluded
+ lic: Release hspice token(s)

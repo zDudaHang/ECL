@@ -1,0 +1,65 @@
+***** HSPICE -- H-2013.03-SP1 32-BIT (May 29 2013) RHEL32 ******
+ Input File: Dice.txt
+ lic:
+ lic: FLEXlm: v10.9.8
+ lic: USER:   mariahang            HOSTNAME: sagittarius-a
+ lic: HOSTID: 00039988e3a4         PID:      20474
+ lic: Using FLEXlm license file:
+ lic: 27020@localhost
+ lic: Checkout 1 hspice
+ lic: License/Maintenance for hspice will expire on 08-jun-2020/2019.06
+ lic: 1(in_use)/50(total) FLOATING license(s) on SERVER 27020@localhost
+ lic:
+ init: begin read circuit files,  cpu clock=  2.09E-01
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         ad
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         ad
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         behave
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         bjt
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         burr_brn
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         comlinear
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         dio
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         fet
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         lin_tech
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         pci
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         signet
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         ti
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         tline
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         xilinx
+       option runlvl
+ init: end read circuit files,  cpu clock=  2.12E-01 peak memory=       120 mb
+ init: begin check errors,  cpu clock=  2.12E-01
+ init: end check errors,  cpu clock=  2.46E-01 peak memory=       120 mb
+ init: begin setup matrix, pivot=     0 cpu clock=  2.46E-01
+       establish matrix -- done,  cpu clock=  2.46E-01 peak memory=       120 mb
+       re-order matrix -- done,  cpu clock=  2.47E-01 peak memory=       120 mb
+ init: end setup matrix,  cpu clock=  2.47E-01 peak memory=       120 mb
+ dcop: begin dcop,  cpu clock=  2.47E-01
+ dcop: end dcop,  cpu clock=  2.51E-01 peak memory=       120 mb  tot_iter=       8
+ sweep: tran tran0    begin, stop_t=  4.00E-09 #sweeps= 401 cpu clock=  2.72E-01
+ tran: time= 4.2857E-10 tot_iter=      44 conv_iter=      21 cpu clock= 2.78E-01
+ tran: time= 8.5714E-10 tot_iter=     156 conv_iter=      66 cpu clock= 3.04E-01
+ tran: time= 1.2030E-09 tot_iter=     295 conv_iter=     122 cpu clock= 3.27E-01
+ tran: time= 1.6112E-09 tot_iter=     377 conv_iter=     157 cpu clock= 3.42E-01
+ tran: time= 2.0000E-09 tot_iter=     411 conv_iter=     173 cpu clock= 3.47E-01
+ tran: time= 2.4286E-09 tot_iter=     522 conv_iter=     218 cpu clock= 3.67E-01
+ tran: time= 2.8571E-09 tot_iter=     631 conv_iter=     263 cpu clock= 3.92E-01
+ tran: time= 3.2769E-09 tot_iter=     763 conv_iter=     319 cpu clock= 4.15E-01
+ tran: time= 3.6124E-09 tot_iter=     843 conv_iter=     353 cpu clock= 4.30E-01
+ tran: time= 4.0000E-09 tot_iter=     877 conv_iter=     369 cpu clock= 4.35E-01
+ sweep: tran tran0    end,  cpu clock=  4.35E-01 peak memory=       120 mb
+>info:         ***** hspice job concluded
+ lic: Release hspice token(s)

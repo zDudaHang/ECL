@@ -1,0 +1,27 @@
+* CIRCUITO DE ESCRITA
+
+* CIRCUITO
+
+.subckt escrita bit we bl blb vdd gnd width=superior_w length=superior_l
+
+* INVERSOR DO BIT
+Minv_bit1 vdd bit bitb vdd PMOS w=width l=length
+Minv_bit2 bitb bit gnd gnd NMOS w=width l=length
+
+* INVERSOR DO WRITE ENABLE (WE)
+Minv_we1 vdd we web vdd PMOS w=width l=length
+Minv_we2 web we gnd gnd NMOS w=width l=length
+
+* Escreve em BL
+Mme1 vdd bitb xe1 vdd PMOS w=width l=length
+Mme2 gnd bitb xe1 gnd NMOS w=width l=length
+Mme3 xe1 we bl gnd NMOS w=width l=length
+Mme4 xe1 web bl vdd PMOS w=width l=length
+
+* Escreve em BLB
+Mme5 vdd bit xe2 vdd PMOS w=width l=length
+Mme6 gnd bit xe2 gnd NMOS w=width l=length
+Mme7 xe2 we blb gnd NMOS w=width l=length
+Mme8 xe2 web blb vdd PMOS w=width l=length
+
+.ends escrita

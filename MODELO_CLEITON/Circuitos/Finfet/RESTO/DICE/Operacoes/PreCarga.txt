@@ -1,0 +1,9 @@
+* CIRCUITO DE PRE-CARGA
+
+.subckt pre_carga pre bl blb vdd gnd length=sup_length fin=sup_fin
+
+M1 vdd pre bl vdd pmos_rvt  l=length nfin=fin
+M2 vdd pre blb vdd pmos_rvt  l=length nfin=fin
+*M3 bl pre blb vdd pmos_rvt  l=length nfin=fin
+
+.ends pre_carga

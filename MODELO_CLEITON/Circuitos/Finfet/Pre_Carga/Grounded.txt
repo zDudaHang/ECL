@@ -1,0 +1,13 @@
+* CIRCUITO DE PRE-CARGA
+
+.TITLE 'Circuito de Pré-Carga com NMOS'
+
+* DECLARANDO COMO SUBCIRCUITO
+* .subckt pre_carga pre bl blb vdd gnd fin=superior_fin
+
+Mpc1	gnd		pre		bl		gnd		nmos_rvt	nfin = fin_auxiliares
+Mpc2	gnd		pre		blb		gnd		nmos_rvt	nfin = fin_auxiliares
+Mpc3	blb		pre		bl		gnd		nmos_rvt	nfin = fin_auxiliares
+
+* TERMINANDO DECLARACAO DO SUBCIRCUITO
+* .ends pre_carga

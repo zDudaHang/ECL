@@ -1,0 +1,35 @@
+* "simulator" "HSPICE" 
+* "version" "H-2013.03-SP1 32-BIT"
+* "format" "HSP"
+* "rundate" "20:49:56 01/11/2020 "
+* "netlist" "Control_Files/8T-SER/timing_16nm_HP.cir "
+* "runtitle" ".include ./circuits/cmos/array_cells/array_8t-ser.cir"
+* time =    0.            
+* temperature =   25.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ bit =   0.            
++ bitb = 699.7640m       
++ bl =  24.3292m       
++ blb =  63.2977m       
++ out =  24.3331m       
++ outb =  63.3083m       
++ pre = 700.0000m       
++ q = 699.6931m       
++ q2 = 700.0000m       
++ q2b = 107.7882n       
++ qb =  87.5787u       
++ sae = 700.0000m       
++ vcell = 700.0000m       
++ vdd = 700.0000m       
++ we = 700.0000m       
++ web = 120.5179u       
++ wl =   0.            
++ wl2 =   0.            
++ wl22 =   0.            
++ xe1 =  12.0822m       
++ xe2 = 296.1685m       
++ xsa1 = 214.3863m       
+***   END: Saved Operating Point ***                     

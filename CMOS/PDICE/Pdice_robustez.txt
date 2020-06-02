@@ -1,0 +1,95 @@
+* TOPOLOGIA PDICE
+
+.options post = 2
+
+.include 32nm_HP.pm
+
+.include Escrita.txt
+.include PreCarga.txt
+
+* PARAMETROS
+
+* NODO
+.param length = 32n
+
+* TENSAO DO CIRCUITO
+.param supply = 0.9
+
+* DIMENSOES DA CELULA
+.param width = 64n
+
+* CIRCUITOS AUXILIARES
+.param width_aux = 210n
+
+* TEMPOS
+.param clock = 1g
+.param slope = 1p
+.param period = 1/clock
+.param step = period/7
+
+.global supply gnd
+
+* SUPPLY DO CIRCUITO
+Vvdd vdd gnd DC supply
+
+.param vboost = 'supply + 0.6'
+
+* SIMULACAO
+
+Vwl wl gnd PWL(0ns 0)
+
+* DECLARACAO DO CIRCUITO
+
+*  CIRCUITOS AUXILIARES
+
+* PRE-CARGA
+Xprecarga pre bl blb vdd gnd pre_carga width=width_aux length=length
+
+* ESCRITA
+Xescrita  bit we bl blb vdd gnd escrita width=width_aux length=length
+
+* PDICE
+
+* INVERSOR 0
+MP0 vdd x3 x0 vdd PMOS w = width l = length
+MN0 x0 x1 gnd gnd NMOS w = width l = length
+
+* INVERSOR 1
+MP1 vdd x0 x1 vdd PMOS w=width l=length
+MN1 x1 x2 gnd gnd NMOS w=width l=length
+
+* INVERSOR 2
+MP2 vdd x1 x2 vdd PMOS w=width l=length
+MN2 x2 x3 gnd gnd NMOS w=width l=length
+
+* INVERSOR 3
+MP3 vdd x2 x3 vdd PMOS w=width l=length
+MN3 x3 x0 gnd gnd NMOS w=width l=length
+
+* TRANSISTORES DE PASSAGEM
+MN5 x1 wwl bl gnd NMOS w = width l = length
+MN6 x3 wwl bl gnd NMOS w = width l = length
+
+MN7 bl rwl between7_8 gnd NMOS w = width l = length
+MN10 blb rwl between10_9 gnd NMOS w = width l = length
+
+MN8 between7_8 x1 gnd gnd NMOS w = width l = length
+MN9 between10_9 x2 gnd gnd NMOS w = width l = length
+
+Cbl bl gnd 20f
+
+.tran 0.01ns '4*period'
+
+* VALOR INICIAL DA CELULA
+.ic v(x0) = 0
+.ic v(x2) = 0
+
+.ic v(x1) = supply
+.ic v(x3) = supply
+
+* TESTE DE ROBUSTEZ
+* 010 : gnd nodo
+* 101 : nodo gnd
+Iexp x3 gnd exp(0 5000u 0.5ns 10p 0.5001ns 320p)
+
+.end

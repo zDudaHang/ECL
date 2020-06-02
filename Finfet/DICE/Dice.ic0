@@ -1,0 +1,28 @@
+* "simulator" "HSPICE" 
+* "version" "H-2013.03-SP1 32-BIT"
+* "format" "HSP"
+* "rundate" "12:19:38 04/15/2020 "
+* "netlist" "Dice.txt "
+* "runtitle" "'dice finfet'"
+* time =    0.            
+* temperature =   25.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ bit = 700.0000m       
++ bl = 642.7973m       
++ blb = 539.1205m       
++ pre =   0.            
++ vdd = 700.0000m       
++ we = 700.0000m       
++ wl =   0.            
++ x0 = 700.0000m       
++ x1 = 357.2361f       
++ x2 = 700.0000m       
++ x3 = 357.2361f       
++ xescrita.bitb = 115.7983n       
++ xescrita.web = 116.0307n       
++ xescrita.xe1 = 672.1164m       
++ xescrita.xe2 = 208.5681m       
+***   END: Saved Operating Point ***                     

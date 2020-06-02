@@ -1,0 +1,6 @@
+$DATA1 SOURCE='HSPICE' VERSION='H-2013.03-SP1 32-BIT'
+.TITLE ''array 8t-ser''
+ escrita_0        leitura_0        escrita_1        leitura_1         
+ energia_vdd      temper           alter#            
+  5.349e-12        2.366e-10       -3.874e-10        2.382e-10        
+ -4.403e-14         25.0000        1                 

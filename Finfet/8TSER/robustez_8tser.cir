@@ -1,0 +1,88 @@
+* TOPOLOGIA 8T-SER
+
+.TITLE '8T-SER 0.5GHz - Robustez'
+
+.OPTION POST = 2
+
+.include 7nm_TT.pm
+
+.include Leitura.txt
+.include Escrita.txt
+.include PreCarga.txt
+
+* PARAMETROS
+.param fin_auxiliares = 1
+.param fin = 1
+
+* TENSAO DO CIRCUITO
+.param supply = 0.7
+
+* TEMPOS
+.param clock = 0.5g
+.param slope = '0.01*period'
+.param period = '1/clock'
+.param step = 'period/7'
+
+.global supply gnd
+
+* SUPPLY DO CIRCUITO
+Vvdd vdd gnd DC supply
+
+* SIMULACAO
+
+Vwl wl gnd PWL(0ns 0)
+Vpre pre gnd PWL(0ns 0)
+Vwe we gnd PWL(0ns 0)
+Vsae sae gnd PWL(0ns 0)
+Vbit bit gnd PWL(0ns 0)
+
+* DECLARACAO DO CIRCUITO
+
+*  CIRCUITOS AUXILIARES
+
+* PRE-CARGA
+Xprecarga pre bl blb vdd gnd pre_carga fin=fin_auxiliares
+
+* ESCRITA
+Xescrita  bit we bl blb vdd gnd escrita fin=fin_auxiliares
+
+* LEITURA
+Xleitura sae bl blb out outb vdd gnd leitura fin=fin_auxiliares
+
+* CELULA
+
+*Pull-UP
+Mp1     vdd     q2      qb     vdd   pmos_rvt   nfin = fin
+Mp2     q         q2b     vdd  vdd   pmos_rvt   nfin = fin
+Mp3     vdd     q2b     q2     vdd   pmos_rvt   nfin = fin
+Mp4     q2b       q2      vdd  vdd   pmos_rvt   nfin = fin
+
+*Access WL
+Mn1     wl        q       qb     gnd     nmos_rvt   nfin = fin
+Mn2     q         qb      wl     gnd     nmos_rvt   nfin = fin
+
+*Access Bitlines
+Mn3     bl        qb      q2     gnd     nmos_rvt   nfin = fin
+Mn4     q2b       q       blb    gnd     nmos_rvt   nfin = fin
+
+
+* CAPACITORES
+Cload	out gnd	1f
+Cload2	outb gnd 1f
+
+
+* VALOR INICIAL DA CELULA
+.ic v(q2)= supply
+.ic v(q2b)= 0
+
+* RESULTADOS
+
+* TESTE DE ROBUSTEZ
+* 010 : gnd nodo
+* 101 : nodo gnd
+Iexp gnd q exp(0 169u 0.1n 10p 0.10001ns 320p)
+
+
+.tran 0.01ns '4*period'
+
+.end

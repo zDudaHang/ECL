@@ -1,0 +1,20 @@
+* CIRCUITO DE LEITURA
+
+* CIRCUITO
+
+.subckt leitura sae bl blb out outb vdd gnd fin=superior_fin
+
+* Transistores de passagem
+Mmsa2	blb		sae		outb 	gnd		nmos_rvt	nfin = fin
+Mmsa1	bl		sae		out		gnd		nmos_rvt	nfin = fin
+Mmsa7   xsa1	sae		vdd		vdd		pmos_rvt	nfin = fin
+
+* Inversor 1
+Mmsa3	xsa1   	out   	outb  	vdd 	pmos_rvt  	nfin = fin
+Mmsa5	outb	out		gnd 	gnd   	nmos_rvt	nfin = fin
+
+* Inversor 2
+Mmsa4	xsa1	outb	out		vdd		pmos_rvt	nfin = fin
+Mmsa6	out		outb	gnd  	gnd		nmos_rvt	nfin = fin
+
+.ends leitura

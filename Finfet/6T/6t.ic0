@@ -1,0 +1,32 @@
+* "simulator" "HSPICE" 
+* "version" "H-2013.03-SP1 32-BIT"
+* "format" "HSP"
+* "rundate" "12:20:33 04/15/2020 "
+* "netlist" "6t.txt "
+* "runtitle" "'6t finfet'"
+* time =    0.            
+* temperature =   25.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ bit =   0.            
++ bl = 539.1206m       
++ blb = 642.7974m       
++ out = 539.1206m       
++ outb = 642.7974m       
++ pre =   0.            
++ q = 700.0000m       
++ qb = 357.2361f       
++ sae =   0.            
++ vdd = 700.0000m       
++ we = 700.0000m       
++ wl =   0.            
++ xleitura.q = 680.0298m       
++ xleitura.q0 = 659.7447m       
++ xleitura.qb = 680.0298m       
++ xescrita.bitb = 699.9998m       
++ xescrita.web = 116.0307n       
++ xescrita.xe1 = 208.5682m       
++ xescrita.xe2 = 672.1165m       
+***   END: Saved Operating Point ***                     

@@ -1,0 +1,24 @@
+* CIRCUITO DE LEITURA
+
+* DECLARANDO COMO SUBCIRCUITO
+* .subckt leitura sae bl blb out outb vdd gnd fin=superior_fin
+
+* TRANSISTORES DE PASSAGEM
+MPsae2 bl sae out vdd pmos_rvt nfin = fin_auxiliares
+MPsae4 blb sae outb vdd pmos_rvt nfin = fin_auxiliares
+MNsae3 xsa1 sae gnd gnd nmos_rvt nfin = fin_auxiliares
+
+* INVERSOR 1
+MPsae0 vdd qb q vdd pmos_rvt nfin = fin_auxiliares
+MNsae0 q qb xsa1 gnd nmos_rvt nfin = fin_auxiliares
+
+* INVERSOR 2
+MPsae1 vdd q qb vdd pmos_rvt nfin = fin_auxiliares
+MNsae1 qb q xsa1 gnd nmos_rvt nfin = fin_auxiliares
+
+* CAPACITORES
+Cload out gnd 1f
+Cload2 outb gnd 1f
+
+* TERMINANDO DECLARACAO DO SUBCIRCUITO
+* .ends leitura

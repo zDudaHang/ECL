@@ -1,0 +1,283 @@
+Mdi:FullSize
+ScopeSigMgr:loadpffile /home/mariahang/ECL/CMOS/DICE/Array_Dice.tr0 1 openonly
+# PF:1
+pf:read PF:1 v(x0)
+# WF:1:1
+Graph addsignal WF:1:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:1 v(x1)
+# WF:1:2
+Graph addsignal WF:1:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+pf:read PF:1 v(bl)
+# WF:1:3
+Graph addsignal WF:1:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+pf:read PF:1 v(blb)
+# WF:1:4
+Graph addsignal WF:1:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+wm geometry .sigmgr._PF:1 288x349+1433+384
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph:DSel
+Graph sigconfig Signal1 -label {v(x1) Nom}
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal0 add
+# Signal0
+Graph sigconfig Signal0 -label {v(x0) Nom}
+Graph:DSel
+Graph itemselect Signal2 add
+# Signal2
+Graph sigconfig Signal2 -label {v(bl) Nom}
+Graph:DSel
+Graph itemselect Signal3 add
+# Signal3
+Graph sigconfig Signal3 -label {v(blb) Nom}
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph sigconfig Signal1 -region 0 -rgnindex 1
+Graph:DSel
+Graph itemselect Signal3 add
+# Signal3
+Graph sigconfig Signal3 -region 1 -rgnindex 1
+Graph:DSel
+Graph:DSel
+ScopeSigMgr:loadpffile /home/mariahang/ECL/CMOS/DICE/Array_Dice.tr0 1 openonly
+# PF:1
+pf:read PF:1 v(x0)
+# WF:1:1
+Graph addsignal WF:1:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal4
+pf:read PF:1 v(x1)
+# WF:1:2
+Graph addsignal WF:1:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal5
+pf:read PF:1 v(bl)
+# WF:1:3
+Graph addsignal WF:1:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal6
+pf:read PF:1 v(blb)
+# WF:1:4
+Graph addsignal WF:1:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal7
+wm geometry .sigmgr._PF:1 288x349+1433+384
+wm geometry .sigmgr 472x220+884+109
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal5 add
+# Signal5
+Graph sigconfig Signal5 -region 2 -rgnindex 1
+Graph:DSel
+Graph itemselect Signal7 add
+# Signal7
+Graph sigconfig Signal7 -region 3 -rgnindex 1
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal6 add
+# Signal6
+Graph itemselect Signal6 add
+# Signal6
+Graph:DSel
+Graph itemselect Signal7 add
+# Signal7
+Graph itemselect Signal7 add
+# Signal7
+Graph itemselect Signal7 add
+# Signal7
+Graph itemselect Signal7 add
+# Signal7
+Graph itemselect Signal7 add
+# Signal7
+Graph delsignal selected
+Graph:DSel
+Graph itemselect Signal6 add
+# Signal6
+Graph delsignal selected
+Graph:DSel
+Graph itemselect Signal4 add
+# Signal4
+Graph delsignal selected
+Graph:DSel
+Graph itemselect Signal5 add
+# Signal5
+Graph delsignal selected
+Graph:DSel
+ScopeSigMgr:loadpffile /home/mariahang/ECL/CMOS/DICE/Array_Dice.tr0 1 openonly
+# PF:1
+wm geometry .sigmgr._PF:1 288x349+1652+197
+pf:read PF:1 v(x0)
+# WF:1:1
+Graph addsignal WF:1:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal8
+pf:read PF:1 v(x1)
+# WF:1:2
+Graph addsignal WF:1:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal9
+pf:read PF:1 v(bl)
+# WF:1:3
+Graph addsignal WF:1:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal10
+pf:read PF:1 v(blb)
+# WF:1:4
+Graph addsignal WF:1:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal11
+wm geometry .sigmgr 472x220+884+109
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal8 add
+# Signal8
+GrMeas:Threshold Graph0 Signal8 {} either xyrangeVisible
+# M:0
+Graph:DSel
+GrMeas:Select Graph0 M:0 1
+GrMeas:HideResult Graph0 M:0 1
+GrMeas:ShowResult Graph0 M:0 1
+GrMeas:Select Graph0 M:0 1 1
+GrMeas:HideResult Graph0 M:0 1
+GrMeas:ShowResult Graph0 M:0 1
+GrMeas:Select Graph0 M:0 1 1
+GrMeas:HideResult Graph0 M:0 1
+GrMeas:ShowResult Graph0 M:0 1
+GrMeas:Select Graph0 M:0 1 1
+wm geometry .sigmgr._PF:1 288x349+1662+205
+GrMeas:HideResult Graph0 M:0 1
+GrMeas:ShowResult Graph0 M:0 1
+GrMeas:Select Graph0 M:0 1 1
+GrMeas:HideResult Graph0 M:0 1
+GrMeas:ShowResult Graph0 M:0 1
+GrMeas:Select Graph0 M:0 1 1
+Graph:DSel
+GrMeas:Select Graph0 M:0 0
+GrMeas:MoveYLevel Graph0 M:0 0 0.20449303893871
+# M:1
+GrMeas:DelMfromMenu Graph0 M:1
+Graph:DSel
+Graph itemselect Signal8 add
+# Signal8
+GrMeas:AtX Graph0 Signal8 {} xyrangeVisible
+# M:2
+Graph:DSel
+GrMeas:Select Graph0 M:2 0 1
+GrMeas:MovePoint Graph0 M:2 0 433.5700234793p 0.90876001066366
+GrMeas:MovePoint Graph0 M:2 0 433.5700234793p 0.90876001066366
+GrMeas:MovePoint Graph0 M:2 0 356.0039264789p 0.89998033088427
+ScopeSigMgr:Unload 1
+Graph0 delsignal Signal0
+Graph0 delsignal Signal1
+Graph0 delsignal Signal2
+Graph0 delsignal Signal3
+Graph0 delsignal Signal8
+Graph0 delsignal Signal9
+Graph0 delsignal Signal10
+Graph0 delsignal Signal11
+ScopeSigMgr:loadpffile /home/mariahang/ECL/CMOS/DICE/Array_Dice.tr0 1 openonly
+# PF:2
+pf:read PF:2 v(x0)
+# WF:2:1
+Graph addsignal WF:2:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:2 v(x1)
+# WF:2:2
+Graph addsignal WF:2:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+pf:read PF:2 v(blb)
+# WF:2:3
+Graph addsignal WF:2:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+pf:read PF:2 v(bl)
+# WF:2:4
+Graph addsignal WF:2:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+wm geometry .sigmgr._PF:2 288x349+1433+384
+wm geometry .sigmgr 472x220+884+109
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal3 add
+# Signal3
+Graph sigconfig {Signal3 Signal2} -region {2 2} -rgnindex {0 1}
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph sigconfig Signal1 -region 0 -rgnindex 1
+Graph:DSel
+Graph itemselect Signal0 add
+# Signal0
+GrMeas:AtX Graph0 Signal0 {} xyrangeVisible
+# M:3
+Graph:DSel
+GrMeas:Select Graph0 M:3 0 1
+GrMeas:MovePoint Graph0 M:3 0 436.13141730922p 0.88228098333117
+ScopeSigMgr:loadpffile /home/mariahang/ECL/CMOS/DICE/Array_Dice.tr0 1 openonly
+# PF:2
+pf:read PF:2 v(wl)
+# WF:2:5
+Graph addsignal WF:2:5 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal4
+wm geometry .sigmgr._PF:2 288x349+1433+384
+wm geometry .sigmgr 472x220+884+109
+Graph:Select Graph0
+GrMeas:MovePoint Graph0 M:3 0 2.7629919665838n 0.89998000246986
+ScopeSigMgr:Reload 0 {{(1) Array_Dice.tr0}}
+Graph:Select Graph0
+GrMeas:MovePoint Graph0 M:3 0 0.0 0.90000001403241
+ScopeSigMgr:Unload 1
+Graph0 delsignal Signal0
+Graph0 delsignal Signal1
+Graph0 delsignal Signal2
+Graph0 delsignal Signal3
+Graph0 delsignal Signal4
+GrXY:NewGraph
+# Graph1
+Mdi:FullSize
+ScopeSigMgr:loadpffile /home/mariahang/ECL/CMOS/DICE/Array_Dice.tr0 1 openonly
+# PF:3
+pf:read PF:3 v(vdd)
+# WF:3:1
+Graph addsignal WF:3:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:3 v(x0)
+# WF:3:2
+Graph addsignal WF:3:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+pf:read PF:3 v(x1)
+# WF:3:3
+Graph addsignal WF:3:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+wm geometry .sigmgr._PF:3 288x349+1433+384
+wm geometry .sigmgr 472x220+884+109
+Graph:Select Graph1
+Graph:DSel
+Graph itemselect Signal0 add
+# Signal0
+GrMeas:AtX Graph1 Signal0 {} xyrangeVisible
+# M:0
+Graph:DSel
+GrMeas:Select Graph1 M:0 0 1
+GrMeas:MovePoint Graph1 M:0 0 1.1201493673721n 0.90000034209082
+GrMeas:DelMfromMenu Graph1 M:0
+ScopeSigMgr:Reload 0 {{(1) Array_Dice.tr0}}
+Graph:DSel
+Graph:Select Graph1
+Graph:DSel
+Graph itemselect Signal0 add
+# Signal0
+Graph delsignal selected
+Graph:DSel
+Graph:Select Graph1
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+GrMeas:AtX Graph1 Signal1 {} xyrangeVisible
+# M:1
+Graph:DSel
+GrMeas:Select Graph1 M:1 0 1
+GrMeas:MovePoint Graph1 M:1 0 442.94244713266p 0.51490984109516
+Graph:Select Graph1
+GrMeas:MovePoint Graph1 M:1 0 443.95449567015p 0.46458656268511
+GrMeas:MovePoint Graph1 M:1 0 435.58246318374p 0.89815587049978

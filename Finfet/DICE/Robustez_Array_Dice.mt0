@@ -1,0 +1,4 @@
+$DATA1 SOURCE='HSPICE' VERSION='H-2013.03-SP1 32-BIT'
+.TITLE ''array dice 128 infet: teste de robustez''
+ leitura_1        temper           alter#            
+  1.951e-11         25.0000        1                 

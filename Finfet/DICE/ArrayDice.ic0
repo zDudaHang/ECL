@@ -1,0 +1,38 @@
+* "simulator" "HSPICE" 
+* "version" "H-2013.03-SP1 32-BIT"
+* "format" "HSP"
+* "rundate" "11:45:48 05/18/2020 "
+* "netlist" "ArrayDice.txt "
+* "runtitle" "'array dice '"
+* time =    0.            
+* temperature =   25.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ bit = 300.0000m       
++ bl = 290.8178m       
++ blb = 272.3511m       
++ pre =   0.            
++ vdd = 300.0000m       
++ we = 300.0000m       
++ wl =   0.            
++ wl_63 =   0.            
++ wl_64 =   0.            
++ x0 = 300.0000m       
++ x0_63 = 300.0000m       
++ x0_64 =  14.8504p       
++ x1 = 234.0633f       
++ x1_63 =  14.7456p       
++ x1_64 = 300.0000m       
++ x2 = 300.0000m       
++ x2_63 = 300.0000m       
++ x2_64 =  14.8504p       
++ x3 = 234.0633f       
++ x3_63 =  14.7456p       
++ x3_64 = 300.0000m       
++ xescrita.bitb = 680.5062n       
++ xescrita.web = 680.7512n       
++ xescrita.xe1 = 295.6223m       
++ xescrita.xe2 =  41.1317m       
+***   END: Saved Operating Point ***                     

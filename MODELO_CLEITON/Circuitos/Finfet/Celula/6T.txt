@@ -1,0 +1,16 @@
+* CIRCUITO 6T
+.TITLE 'CELULA 6T 0.5GHz'
+
+* 6T
+
+* PRIMEIRO INVERSOR
+MP0 vdd qb q vdd pmos_rvt nfin = fin
+MN0 q qb gnd gnd nmos_rvt nfin = fin
+
+* SEGUNDO INVERSOR
+MP1 vdd q qb vdd pmos_rvt nfin = fin
+MN1 qb q gnd gnd nmos_rvt nfin = fin
+
+* TRANSISTORES DE PASSAGEM
+MN2 bl wl q gnd nmos_rvt nfin = fin
+MN3 blb wl qb gnd nmos_rvt nfin = fin

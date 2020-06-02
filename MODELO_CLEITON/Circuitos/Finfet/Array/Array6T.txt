@@ -1,0 +1,144 @@
+* CIRCUITO 6T
+.TITLE 'Array 6T 128 celulas'
+
+.OPTION POST = 2
+
+.PRINT v(q) v(qb) v(bl) v(blb) v(pre) v(wl) v(sae) v(bit) v(we)
+
+.include 7nm_TT.pm
+
+.include Escrita.txt
+.include Leitura.txt
+.include PreCarga.txt
+
+* PARAMETROS
+.param fin_auxiliares = 1
+.param fin = 1
+.param num_cel = 128
+
+* TENSAO DO CIRCUITO
+.param supply = 0.7
+
+* TEMPO
+.param clock = 0.5g
+.param slope = '0.01*period'
+.param period = '1/clock'
+.param step = 'period/7'
+
+ .global supply gnd
+
+* FONTE DO CIRCUITO
+Vvdd vdd gnd DC supply
+
+* SIMULACAO
+
+* OUTRAS CELULAS
+Vwl0 wl0 gnd PWL (0ns 0)
+Vwl1 wl1 gnd PWL (0ns 0)
+
+* CELULA DE TESTE
+Vbit bit gnd PWL(0ns 0 '2*period' 0 '2*period + slope' supply)
+
+Vwe we gnd PWL(0ns supply 'period' supply 'period + slope' 0
++ '2*period' 0 '2*period + slope' supply
++ '3*period' supply '3*period + slope' 0)
+
+Vwl wl gnd PWL(0ns 0 '3*step' 0 '3*step + slope' supply '4*step' supply '4*step + slope' 0
++ 'period + 3*step' 0 'period + 3*step + slope' supply 'period + 4*step' supply 'period + 4*step + slope' 0
++ '2*period + 3*step' 0 '2*period + 3*step + slope' supply '2*period + 4*step' supply '2*period + 4*step + slope' 0
++ '3*period + 3*step' 0 '3*period + 3*step + slope' supply '3*period + 4*step' supply '3*period + 4*step + slope' 0)
+
+Vpre pre gnd PWL(0ns 0 'step' 0 'step + slope' supply '6*step' supply '6*step + slope' 0
++ 'period + step' 0 'period + step + slope' supply 'period + 6*step' supply 'period + 6*step + slope' 0
++ '2*period + step' 0 '2*period + step + slope' supply '2*period + 6*step' supply '2*period + 6*step + slope' 0
++ '3*period + step' 0 '3*period + step + slope' supply '3*period + 6*step' supply '3*period + 6*step + slope' 0)
+
+Vsae sae gnd PWL(0ns 0 'period + 3*step' 0 'period + 3*step + slope' supply 'period + 4*step' supply 'period + 4*step + slope' 0
++ '3*period + 3*step' 0 '3*period + 3*step + slope' supply '3*period + 4*step' supply '3*period + 4*step + slope' 0)
+
+* DECLARACAO DO CIRCUITO
+
+* CIRCUITOS AUXILIARES
+
+* PRE-CARGA
+Xprecarga pre bl blb vdd gnd pre_carga fin=fin_auxiliares
+
+* LEITURA
+Xleitura  sae bl blb out outb vdd gnd leitura fin=fin_auxiliares
+
+* ESCRITA
+Xescrita  bit we bl blb vdd gnd escrita fin=fin_auxiliares
+
+* ====== ARRAY DA 6T
+
+* === CELULA TESTE COM VALOR 1
+
+* PRIMEIRO INVERSOR
+MP0 vdd qb q vdd pmos_rvt nfin = fin
+MN0 q qb gnd gnd nmos_rvt nfin = fin
+
+* SEGUNDO INVERSOR
+MP1 vdd q qb vdd pmos_rvt nfin = fin
+MN1 qb q gnd gnd nmos_rvt nfin = fin
+
+* TRANSISTORES DE PASSAGEM
+MN2 bl wl q gnd nmos_rvt nfin = fin
+MN3 blb wl qb gnd nmos_rvt nfin = fin
+
+* === 63 CELULAS COM VALOR 1
+
+* PRIMEIRO INVERSOR
+MP4 vdd q0b q0 vdd pmos_rvt nfin ='fin*((num_cel/2)-1)'
+MN4 q0 q0b gnd gnd nmos_rvt nfin ='fin*((num_cel/2)-1)'
+
+* SEGUNDO INVERSOR
+MP5 vdd q0 q0b vdd pmos_rvt nfin ='fin*((num_cel/2)-1)'
+MN5 q0b q0 gnd gnd nmos_rvt nfin ='fin*((num_cel/2)-1)'
+
+* TRANSISTORES DE PASSAGEM
+MN6 bl wl0 q0 gnd nmos_rvt nfin ='fin*((num_cel/2)-1)'
+MN7 blb wl0 q0b gnd nmos_rvt nfin ='fin*((num_cel/2)-1)'
+
+* === 64 CELULAS COM VALOR 0
+
+* PRIMEIRO INVERSOR
+MP8 vdd q1b q1 vdd pmos_rvt nfin ='fin*(num_cel/2)'
+MN8 q1 q1b gnd gnd nmos_rvt nfin ='fin*(num_cel/2)'
+
+* SEGUNDO INVERSOR
+MP9 vdd q1 q1b vdd pmos_rvt nfin ='fin*(num_cel/2)'
+MN9 q1b q1 gnd gnd nmos_rvt nfin ='fin*(num_cel/2)'
+
+* TRANSISTORES DE PASSAGEM
+MN10 bl wl1 q1 gnd nmos_rvt nfin ='fin*(num_cel/2)'
+MN11 blb wl1 q1b gnd nmos_rvt nfin ='fin*(num_cel/2)'
+
+
+* ====== INICIALIZACOES
+
+* === CELULA TESTE
+.ic v(q) = supply
+.ic v(qb) = 0
+
+* === 63 CELULAS
+.ic v(q0) = supply
+.ic v(q0b) = 0
+
+* === 64 CELULAS
+.ic v(q1) = 0
+.ic v(q1b) = supply
+
+* RESULTADOS
+.tran 0.01ns '4*period'
+
+.measure tran Escrita_0 trig v(wl) val='supply/2' rise=1 targ v(q) val='supply/2' fall=1
+
+.measure tran Leitura_0 trig v(wl) val='supply/2' rise=2 targ v(bl) val='supply*0.9' fall=1
+
+.measure tran Escrita_1 trig v(wl) val='supply/2'  rise=3 targ v(q) val='supply/2' rise=1
+
+.measure tran Leitura_1 trig v(wl) val='supply/2'  rise=4 targ v(blb) val='supply*0.9' fall=3
+
+.measure tran Energia_vdd INTEG i(Vvdd) from=0 to='4*period'
+
+.end

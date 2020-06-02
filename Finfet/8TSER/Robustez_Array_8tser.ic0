@@ -1,0 +1,42 @@
+* "simulator" "HSPICE" 
+* "version" "H-2013.03-SP1 32-BIT"
+* "format" "HSP"
+* "rundate" "16:57:48 03/22/2020 "
+* "netlist" "Robustez_Array_8tser.cir "
+* "runtitle" "'robustez array 8t-ser'"
+* time =    0.            
+* temperature =   25.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ bit =   0.            
++ bl =   0.            
++ blb =   0.            
++ out =  56.4877n       
++ outb =  56.4877n       
++ pre =   0.            
++ q = 699.9998m       
++ q2 = 700.0000m       
++ q2b = 200.2327f       
++ q2bcells =  12.6129p       
++ q2bcells2 = 700.0000m       
++ q2cells = 700.0000m       
++ q2cells2 =  12.8131p       
++ qb = 115.7175n       
++ qbcells = 115.7135n       
++ qbcells2 = 699.9998m       
++ qcells = 699.9998m       
++ qcells2 = 115.7135n       
++ sae = 700.0000m       
++ vdd = 700.0000m       
++ we =   0.            
++ wl =   0.            
++ wl2 =   0.            
++ wl22 =   0.            
++ xescrita.bitb = 699.9998m       
++ xescrita.web = 699.9998m       
++ xescrita.xe1 = 115.6733n       
++ xescrita.xe2 = 699.9995m       
++ xleitura.xsa1 =  18.9271m       
+***   END: Saved Operating Point ***                     

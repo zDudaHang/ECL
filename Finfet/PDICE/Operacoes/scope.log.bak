@@ -1,0 +1,225 @@
+ScopeSigMgr:loadpffile /home/mariahang/ECL/Finfet/PDICE/Operacoes/Escrever1.tr0 1 openonly
+# PF:1
+pf:read PF:1 v(x0)
+# WF:1:1
+Graph addsignal WF:1:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:1 v(wwl)
+# WF:1:2
+Graph addsignal WF:1:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+pf:read PF:1 v(bl)
+# WF:1:3
+Graph addsignal WF:1:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+pf:read PF:1 v(blb)
+# WF:1:4
+Graph addsignal WF:1:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+Mdi:Iconify
+Graph:Select Graph0
+Graph:Select Graph0
+Mdi:Deiconify
+Mdi:FullSize
+Mdi:ArrangeIcons
+wm geometry . 1610x955+69+26
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect AxisY(2,0) add
+# AxisY(2,0)
+Graph itemselect AxisY(2,0) add
+Graph:DSel
+Graph:DSel
+ScopeSigMgr:loadpffile /home/mariahang/ECL/Finfet/PDICE/Operacoes/Escrever1.tr0 1 openonly
+# PF:2
+pf:read PF:2 v(x0)
+# WF:2:1
+Graph addsignal WF:2:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal4
+pf:read PF:2 v(wwl)
+# WF:2:2
+Graph addsignal WF:2:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal5
+wm geometry .sigmgr._PF:2 287x349+870+555
+wm geometry .sigmgr._PF:2 287x386+870+555
+wm geometry .sigmgr._PF:2 283x386+870+555
+wm geometry .sigmgr._PF:2 282x386+870+555
+wm geometry .sigmgr._PF:2 278x386+870+555
+wm geometry .sigmgr._PF:2 277x386+870+555
+pf:read PF:2 v(bl)
+# WF:2:3
+Graph addsignal WF:2:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal6
+pf:read PF:2 v(blb)
+# WF:2:4
+Graph addsignal WF:2:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal7
+wm geometry .sigmgr 472x220+488+203
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0) AxisY(2,0) AxisY(3,0) AxisY(4,0) AxisY(5,0) AxisY(6,0) AxisY(7,0)} -range {all all all all all all all all all} -zoomed {0 0 0 0 0 0 0 0 0}
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal2 add
+# Signal2
+Graph sigconfig {Signal2 Signal7} -regswap {7 8}
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal3 add
+# Signal3
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal3 add
+# Signal3
+Graph sigconfig {Signal3 Signal7} -regswap {7 8}
+Graph:DSel
+Graph:DSel
+ScopeSigMgr:loadpffile /home/mariahang/ECL/Finfet/PDICE/Operacoes/Escrever1.tr0 1 replace
+# PF:3
+wm geometry .sigmgr 472x220+488+203
+ScopeSigMgr:loadpffile /home/mariahang/ECL/Finfet/PDICE/Operacoes/Escrever1.tr0 1 openonly
+# PF:3
+wm geometry .sigmgr._PF:2 277x386+870+555
+wm geometry .sigmgr 472x220+488+203
+GrXY:NewGraph
+# Graph1
+ScopeSigMgr:Reload 0 {{(2) Escrever1.tr0}}
+Mdi:FullSize
+ScopeSigMgr:loadpffile /home/mariahang/ECL/Finfet/PDICE/Operacoes/Escrever1.tr0 1 openonly
+# PF:3
+pf:read PF:3 v(x0)
+# WF:3:1
+Graph addsignal WF:3:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:3 v(wwl)
+# WF:3:2
+Graph addsignal WF:3:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+pf:read PF:3 v(blb)
+# WF:3:3
+Graph addsignal WF:3:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+pf:read PF:3 v(bl)
+# WF:3:4
+Graph addsignal WF:3:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+wm geometry .sigmgr._PF:2 277x386+870+555
+wm geometry .sigmgr 472x220+488+203
+Graph:DSel
+Graph:Select Graph1
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.001936270760922 0.14140075204377} {592.142p 624.27p}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0) AxisY(2,0) AxisY(3,0)} -range {all all all all all} -zoomed {0 0 0 0 0}
+Graph:DSel
+Graph itemselect Signal0 add
+# Signal0
+Graph sigconfig {Signal0 Signal2 Signal3} -regswap {2 3 4}
+Graph:DSel
+Graph:DSel
+GrXY:NewGraph
+# Graph2
+GrXY:NewGraph
+# Graph3
+Mdi:FullSize
+ScopeSigMgr:loadpffile /home/mariahang/ECL/Finfet/PDICE/Operacoes/Escrever0.tr0 1 openonly
+# PF:4
+wm geometry .sigmgr._PF:4 286x349+900+585
+wm geometry .sigmgr._PF:4 286x386+900+585
+wm geometry .sigmgr._PF:4 285x386+900+585
+wm geometry .sigmgr._PF:4 281x386+900+585
+wm geometry .sigmgr._PF:4 282x386+900+585
+pf:read PF:4 v(x0)
+# WF:4:1
+Graph addsignal WF:4:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:4 v(wwl)
+# WF:4:2
+Graph addsignal WF:4:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+pf:read PF:4 v(we)
+# WF:4:3
+Graph addsignal WF:4:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+pf:read PF:4 v(bl)
+# WF:4:4
+Graph addsignal WF:4:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+pf:read PF:4 v(blb)
+# WF:4:5
+Graph addsignal WF:4:5 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal4
+wm geometry .sigmgr 472x220+488+203
+Graph:DSel
+Graph:Select Graph3
+Graph:DSel
+GrXY:NewGraph
+# Graph4
+ScopeSigMgr:loadpffile /home/mariahang/ECL/Finfet/PDICE/Operacoes/Escrever1.tr0 1 openonly
+# PF:5
+wm geometry .sigmgr._PF:5 289x349+930+615
+pf:read PF:5 v(bl)
+# WF:5:1
+Graph addsignal WF:5:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:5 v(blb)
+# WF:5:2
+Graph addsignal WF:5:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+pf:read PF:5 v(x0)
+# WF:5:3
+Graph addsignal WF:5:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+pf:read PF:5 v(wwl)
+# WF:5:4
+Graph addsignal WF:5:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+pf:read PF:5 v(we)
+# WF:5:5
+Graph addsignal WF:5:5 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal4
+wm geometry .sigmgr 472x220+488+203
+Mdi:FullSize
+ScopeSigMgr:loadpffile /home/mariahang/ECL/Finfet/PDICE/Operacoes/Escrever0.tr0 1 openonly
+# PF:6
+pf:read PF:6 v(blb)
+# WF:6:1
+Graph addsignal WF:6:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal5
+pf:read PF:6 v(bl)
+# WF:6:2
+Graph addsignal WF:6:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal6
+wm geometry .sigmgr 472x220+488+203
+Graph:Select Graph4
+Graph:DSel
+Graph itemselect Signal6 add
+# Signal6
+Graph delsignal selected
+Graph:DSel
+Graph itemselect Signal5 add
+# Signal5
+Graph delsignal selected
+Graph:DSel
+Graph:DSel
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(4) Escrever1.tr0}}
+ScopeSigMgr:Reload 0 {{(4) Escrever1.tr0}}
+Graph:DSel
+Graph:Select Graph4
+Graph:DSel
+Graph:DSel
+Graph:Select Graph4
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(4) Escrever1.tr0}}
+ScopeSigMgr:Reload 0 {{(4) Escrever1.tr0}}
+ScopeSigMgr:Reload 0 {{(4) Escrever1.tr0}}
+ScopeSigMgr:Reload 0 {{(4) Escrever1.tr0}}
+ScopeSigMgr:Reload 0 {{(4) Escrever1.tr0}}
+ScopeSigMgr:Reload 0 {{(4) Escrever1.tr0}}
+Graph:DSel
+Graph:Select Graph4
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(4) Escrever1.tr0}}
+Graph:Select Graph4
+Graph:DSel
+Graph itemselect Signal51 add
+# Signal51
+Graph:DSel
+Graph:DSel

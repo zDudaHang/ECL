@@ -1,0 +1,442 @@
+Mdi:FullSize
+ScopeSigMgr:loadpffile /home/mariahang/ECL/CMOS/6T/6t.tr0 1 openonly
+# PF:1
+pf:read PF:1 v(q)
+# WF:1:1
+Graph addsignal WF:1:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:1 v(qb)
+# WF:1:2
+Graph addsignal WF:1:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+wm geometry .sigmgr 472x250+495+177
+ScopeSigMgr:Reload 0 {{(1) 6t.tr0}}
+Graph:DSel
+Graph:Select Graph0
+Graph:DSel
+Graph:DSel
+Graph:Select Graph0
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(1) 6t.tr0}}
+GrXY:NewGraph
+# Graph1
+ScopeSigMgr:loadpffile /home/mariahang/ECL/CMOS/6T/6t_robustez.tr0 1 openonly
+# PF:4
+wm geometry .sigmgr._PF:4 288x349+699+364
+wm geometry .sigmgr._PF:4 288x349+695+350
+wm geometry .sigmgr._PF:4 288x349+692+337
+wm geometry .sigmgr._PF:4 288x349+684+311
+wm geometry .sigmgr._PF:4 288x349+679+296
+wm geometry .sigmgr._PF:4 288x349+678+289
+pf:read PF:4 v(q)
+# WF:4:1
+Graph addsignal WF:4:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:4 v(qb)
+# WF:4:2
+Graph addsignal WF:4:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+wm geometry .sigmgr._PF:4 288x349+688+297
+wm geometry .sigmgr 472x250+495+177
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) 6t_robustez.tr0}}
+Graph:DSel
+Graph:Select Graph1
+Graph:DSel
+Graph:DSel
+Graph:DSel
+Mdi:Iconify
+Graph:Select Graph1
+GrXY:NewGraph
+# Graph2
+Mdi:FullSize
+Graph:DSel
+ScopeSigMgr:loadpffile /home/mariahang/ECL/CMOS/DICE/Dice.tr0 1 openonly
+wm geometry .sigmgr._PF:46 288x349+732+374
+wm geometry .sigmgr._PF:46 288x349+731+371
+wm geometry .sigmgr._PF:46 288x349+729+368
+wm geometry .sigmgr._PF:46 288x349+725+363
+wm geometry .sigmgr._PF:46 288x349+718+354
+wm geometry .sigmgr._PF:46 288x349+710+344
+wm geometry .sigmgr._PF:46 288x349+700+333
+wm geometry .sigmgr._PF:46 288x349+687+319
+wm geometry .sigmgr._PF:46 288x349+676+308
+wm geometry .sigmgr._PF:46 288x349+669+285
+wm geometry .sigmgr._PF:46 288x349+640+268
+wm geometry .sigmgr._PF:46 288x349+635+259
+wm geometry .sigmgr._PF:46 288x349+634+257
+wm geometry .sigmgr._PF:46 288x349+633+255
+wm geometry .sigmgr._PF:46 288x349+631+253
+wm geometry .sigmgr._PF:46 288x349+630+253
+wm geometry .sigmgr._PF:46 288x349+629+252
+pf:read PF:46 v(x0)
+# WF:46:1
+Graph addsignal WF:46:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:46 v(x1)
+# WF:46:2
+Graph addsignal WF:46:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+pf:read PF:46 v(x2)
+# WF:46:3
+Graph addsignal WF:46:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+pf:read PF:46 v(x3)
+# WF:46:4
+Graph addsignal WF:46:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+wm geometry .sigmgr._PF:46 288x349+639+260
+wm geometry .sigmgr 472x250+495+177
+Graph:DSel
+Graph:Select Graph2
+Graph:DSel
+Graph:DSel
+Graph:DSel
+Graph:DSel
+Graph:DSel
+Graph:DSel
+Graph:DSel
+Graph:Select Graph2
+Graph:DSel
+Graph:DSel
+Mdi:Iconify
+Graph:Select Graph2
+GrXY:NewGraph
+# Graph3
+Mdi:FullSize
+ScopeSigMgr:loadpffile /home/mariahang/ECL/CMOS/DICE/Dice_robustez.tr0 1 openonly
+# PF:47
+wm geometry .sigmgr._PF:47 288x349+754+361
+wm geometry .sigmgr._PF:47 288x349+745+343
+wm geometry .sigmgr._PF:47 288x349+739+331
+wm geometry .sigmgr._PF:47 288x349+732+316
+wm geometry .sigmgr._PF:47 288x349+722+294
+wm geometry .sigmgr._PF:47 288x349+721+288
+wm geometry .sigmgr._PF:47 288x349+722+284
+wm geometry .sigmgr._PF:47 288x349+726+281
+wm geometry .sigmgr._PF:47 288x349+728+281
+pf:read PF:47 v(x1)
+# WF:47:1
+Graph addsignal WF:47:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:47 v(x2)
+# WF:47:2
+Graph addsignal WF:47:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+pf:read PF:47 v(x0)
+# WF:47:3
+Graph addsignal WF:47:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+pf:read PF:47 v(x3)
+# WF:47:4
+Graph addsignal WF:47:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+wm geometry .sigmgr._PF:47 288x349+738+289
+wm geometry .sigmgr 472x250+495+177
+Graph:DSel
+Graph:Select Graph3
+Graph:DSel
+Graph itemselect Signal2 add
+# Signal2
+Graph sigconfig Signal2 -region 0 -rgnindex 1
+Graph itemselect Signal2 add
+# Signal2
+Graph sigconfig {Signal2 Signal0 Signal1 Signal3} -regswap {0 1 2 3}
+Graph:DSel
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(4) Dice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(4) Dice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(4) Dice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(4) Dice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(4) Dice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(4) Dice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(4) Dice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(4) Dice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(4) Dice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(4) Dice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(4) Dice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(4) Dice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(4) Dice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(4) Dice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(4) Dice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(4) Dice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(4) Dice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(4) Dice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(4) Dice_robustez.tr0}}
+Graph:Select Graph2
+Graph:Select Graph1
+GrXY:NewGraph
+# Graph4
+Mdi:FullSize
+ScopeSigMgr:loadpffile /home/mariahang/ECL/CMOS/PDICE/Pdice.tr0 1 openonly
+# PF:65
+wm geometry .sigmgr._PF:65 288x349+777+318
+wm geometry .sigmgr._PF:65 288x349+770+267
+pf:read PF:65 v(x0)
+# WF:65:1
+Graph addsignal WF:65:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:65 v(x1)
+# WF:65:2
+Graph addsignal WF:65:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+pf:read PF:65 v(x2)
+# WF:65:3
+Graph addsignal WF:65:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+pf:read PF:65 v(x3)
+# WF:65:4
+Graph addsignal WF:65:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+wm geometry .sigmgr._PF:65 288x349+780+275
+wm geometry .sigmgr 472x250+495+177
+ScopeSigMgr:Unload 1
+Graph4 delsignal Signal0
+Graph4 delsignal Signal1
+Graph4 delsignal Signal2
+Graph4 delsignal Signal3
+Graph2 delsignal Signal0
+Graph2 delsignal Signal1
+Graph2 delsignal Signal2
+Graph2 delsignal Signal3
+Graph1 delsignal Signal82
+Graph1 delsignal Signal83
+Graph:Select Graph2
+Graph:Select Graph1
+Graph:Select Graph2
+GrXY:NewGraph
+# Graph5
+Mdi:FullSize
+ScopeSigMgr:loadpffile /home/mariahang/ECL/CMOS/PDICE/Pdice.tr0 1 openonly
+# PF:66
+wm geometry .sigmgr._PF:66 288x349+669+363
+wm geometry .sigmgr._PF:66 288x349+669+349
+wm geometry .sigmgr._PF:66 288x349+669+334
+wm geometry .sigmgr._PF:66 288x349+650+316
+wm geometry .sigmgr._PF:66 288x349+645+300
+wm geometry .sigmgr._PF:66 288x349+637+273
+wm geometry .sigmgr._PF:66 288x349+634+263
+wm geometry .sigmgr._PF:66 288x349+633+259
+pf:read PF:66 v(x0)
+# WF:66:1
+Graph addsignal WF:66:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:66 v(wwl)
+# WF:66:2
+Graph addsignal WF:66:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+pf:read PF:66 v(we)
+# WF:66:3
+Graph addsignal WF:66:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+pf:read PF:66 v(rwl)
+# WF:66:4
+Graph addsignal WF:66:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+pf:read PF:66 v(blb)
+# WF:66:5
+Graph addsignal WF:66:5 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal4
+pf:read PF:66 v(bl)
+# WF:66:6
+Graph addsignal WF:66:6 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal5
+wm geometry .sigmgr._PF:66 288x349+643+267
+wm geometry .sigmgr 472x250+495+177
+Graph:Select Graph5
+Graph:DSel
+Graph itemselect Signal3 add
+# Signal3
+Graph sigconfig Signal3 -region 2 -rgnindex 1
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal3 add
+# Signal3
+Graph sigconfig Signal3 -region 1 -rgnindex 1
+Graph:DSel
+Graph:ManipulateItem isreadonly
+Graph itemcreate rectangle 74.0 43.0 247.0 539.0 -tags draw0_rectangle -fill {} -outline #FF0000 -width 2 -linestyle - -dashlength 10
+# GrDraw0_rectangle
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(1) Pdice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Pdice.tr0}}
+Graph:DSel 0
+Graph:ManipulateItem addtag selSet withtag GrDraw0_rectangle
+Graph:Select Graph5
+Graph:DSel
+ScopeSigMgr:loadpffile /home/mariahang/ECL/CMOS/PDICE/Pdice.tr0 1 openonly
+# PF:68
+pf:read PF:68 v(pre)
+# WF:68:7
+Graph addsignal WF:68:7 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal18
+wm geometry .sigmgr._PF:66 288x349+643+267
+wm geometry .sigmgr 472x250+495+177
+ScopeSigMgr:Reload 0 {{(1) Pdice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Pdice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Pdice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Pdice.tr0}}
+Graph:DSel
+Graph:Select Graph5
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(1) Pdice.tr0}}
+Graph:DSel
+Graph:Select Graph5
+Graph:DSel 0
+Graph:ManipulateItem addtag selSet withtag GrDraw0_rectangle
+Graph:ManipulateItem move selSet -1 0
+Graph:ManipulateItem delete GrDraw0_rectangle
+Graph:ManipulateItem dtag GrDraw0_rectangle selSet
+Graph:DSel
+Graph:DSel
+Graph:DSel
+GrXY:NewGraph
+# Graph6
+ScopeSigMgr:Unload 1
+ScopeSigMgr:loadpffile /home/mariahang/ECL/CMOS/PDICE/Pdice.tr0 1 openonly
+# PF:74
+wm geometry .sigmgr 472x250+495+177
+ScopeSigMgr:loadpffile /home/mariahang/ECL/CMOS/PDICE/Pdice_robustez.tr0 1 openonly
+# PF:75
+pf:read PF:75 v(x1)
+# WF:75:1
+Graph addsignal WF:75:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:75 v(x1)
+# WF:75:1
+wm geometry .sigmgr 472x250+678+171
+wm geometry .sigmgr 472x250+768+176
+wm geometry .sigmgr 472x250+810+174
+wm geometry .sigmgr 472x250+789+155
+wm geometry .sigmgr 472x250+762+137
+wm geometry .sigmgr 472x250+760+137
+Graph addsignal WF:75:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+pf:read PF:75 v(x0)
+# WF:75:2
+Graph addsignal WF:75:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+Graph:Select Graph6
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph itemselect Signal1 add
+# Signal1
+Graph itemselect Signal1 add
+# Signal1
+Graph itemselect Signal1 add
+# Signal1
+Graph delsignal selected
+Graph:DSel
+pf:read PF:75 v(x2)
+# WF:75:3
+Graph addsignal WF:75:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+pf:read PF:75 v(x3)
+# WF:75:4
+Graph addsignal WF:75:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal4
+wm geometry .sigmgr 472x250+770+145
+Mdi:FullSize
+Graph:Select Graph6
+Graph:DSel
+Graph itemselect Signal2 add
+# Signal2
+Graph sigconfig {Signal2 Signal0 Signal3 Signal4} -regswap {0 1 3 4}
+Graph:DSel
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+Graph:Select Graph6
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}
+ScopeSigMgr:Reload 0 {{(2) Pdice_robustez.tr0}}

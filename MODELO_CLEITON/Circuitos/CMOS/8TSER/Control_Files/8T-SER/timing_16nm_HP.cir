@@ -1,0 +1,72 @@
+.include ./Circuits/CMOS/Array_Cells/Array_8T-SER.cir
+.include ./Circuits/CMOS/Cell/SRAM_8T-SER.cir
+.include ./Circuits/CMOS/Pre/Grounded.cir
+.include ./Circuits/CMOS/Sense/Type_2.cir
+.include ./Circuits/CMOS/Write/Default.cir
+.include ./Circuits/CMOS/Signal/Validation_Type2.cir
+* .include ./Circuits/CMOS/Signal/Validation_Dice_Waves.cir
+
+.include ./Circuits/CMOS/Models/16nm_HP.pm
+
+.options post = 2
+
+* Tecnologia
+.param length = 16n
+.param w_min  = 32n
+
+* Tensão de Alimentação
+.param supply = 0.7
+
+* Dimensionamento da Célula
+.param w_pd = 50n
+.param w_pu = 40n
+.param w_ac = 45n
+
+* Tamanho do Array
+.param num_cell = 128
+
+* Write
+.param w_pwe = 64n
+.param w_nwe = 64n
+
+* Sense
+.param w_sa_pd = 64n
+.param w_sa_pu = 64n
+.param w_sa_ac = 64n
+
+* Pre
+.param w_pc = 64n
+
+* Passo de Operação (g: ghz, meg:mhz, k: khz)
+.param frequency = 0.5g
+.param slope = '0.01*unit'
+.param unit = '1/frequency'
+
+.param ts_r = '1/(7*frequency)'
+.param ts_w = '1/(7*frequency)'
+
+* Valore iniciais para a Escrita
+.ic  v(q2)=supply   	v(q2b)=0
+
+* Valores iniciais do Array
+.ic  v(q2cells)=0   	 	v(q2bcells)=supply
+.ic  v(q2cells2)=supply     v(q2bcells2)=0
+
+* Capacitores para as saídas
+Cload	out  gnd	1f
+Cload2	outb gnd    1f
+
+* Tipo de simulação
+.tran '0.001*unit'  '4*unit'
+
+* Mensuração da energia
+*.control
+*	run
+*	wrdata out.txt wl q2 bl blb
+*	meas tran power  INTEG i(Vcell) from= 0 to= '4*unit'
+*	echo $&power > ./Results/CMOS/Energy/8T-SER/out.txt
+*	plot v(bit)+7 v(we)+6 v(wl)+5 v(pre)+4 v(sae)+3 v(q)+2 v(qb)+2 v(q2)+1 v(q2b)+1 v(bl) v(blb) v(out)-1 v(outb)-1
+	*quit
+*.endc
+
+.end

@@ -1,0 +1,38 @@
+* "simulator" "HSPICE" 
+* "version" "H-2013.03-SP1 32-BIT"
+* "format" "HSP"
+* "rundate" "11:38:58 05/18/2020 "
+* "netlist" "Array6T.txt "
+* "runtitle" "'array 6t 32nm'"
+* time =    0.            
+* temperature =   25.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ bit =   0.            
++ bl = 499.4006m       
++ blb = 641.7216m       
++ out = 499.4006m       
++ outb = 641.7216m       
++ pre =   0.            
++ q = 700.0000m       
++ q0 = 700.0000m       
++ q0b = 763.3607p       
++ q1 = 488.5914p       
++ q1b = 700.0000m       
++ qb =  10.2389p       
++ sae =   0.            
++ vdd = 700.0000m       
++ we = 700.0000m       
++ wl =   0.            
++ wl0 =   0.            
++ wl1 =   0.            
++ xleitura.q = 581.5343m       
++ xleitura.q0 = 444.5853m       
++ xleitura.qb = 581.5343m       
++ xescrita.bitb = 699.9879m       
++ xescrita.web =   1.1557u       
++ xescrita.xe1 = 111.2685m       
++ xescrita.xe2 = 672.9319m       
+***   END: Saved Operating Point ***                     

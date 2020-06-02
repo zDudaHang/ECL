@@ -1,0 +1,3 @@
+Mpc1	gnd		pre		bl		gnd		NMOS	w= w_pc 	l=length
+Mpc2	gnd		pre		blb		gnd		NMOS	w= w_pc 	l=length
+Mpc3	blb		pre		bl		gnd		NMOS	w= w_pc 	l=length

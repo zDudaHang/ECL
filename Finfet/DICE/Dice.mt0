@@ -1,0 +1,6 @@
+$DATA1 SOURCE='HSPICE' VERSION='H-2013.03-SP1 32-BIT'
+.TITLE ''dice finfet''
+ escrita_0        leitura_0        escrita_1        leitura_1         
+ energia_vdd      temper           alter#            
+  2.292e-11        2.560e-11        2.327e-11        2.535e-11        
+ -4.356e-14         25.0000        1                 

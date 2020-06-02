@@ -1,0 +1,67 @@
+***** HSPICE -- H-2013.03-SP1 32-BIT (May 29 2013) RHEL32 ******
+ Input File: Robustez_Array_8tser.cir
+ lic:
+ lic: FLEXlm: v10.9.8
+ lic: USER:   mariahang            HOSTNAME: sagittarius-a
+ lic: HOSTID: 00039988e3a4         PID:      14318
+ lic: Using FLEXlm license file:
+ lic: 27020@localhost
+ lic: Checkout 1 hspice
+ lic: License/Maintenance for hspice will expire on 08-jun-2020/2019.06
+ lic: 1(in_use)/50(total) FLOATING license(s) on SERVER 27020@localhost
+ lic:
+ init: begin read circuit files,  cpu clock=  2.15E-01
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         ad
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         ad
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         behave
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         bjt
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         burr_brn
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         comlinear
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         dio
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         fet
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         lin_tech
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         pci
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         signet
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         ti
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         tline
+       option search = /usr/synopsys/hspice_H-2013.03-SP1/hspice/parts/
+                         xilinx
+       option runlvl
+       option post =     2.00
+ init: end read circuit files,  cpu clock=  2.19E-01 peak memory=       119 mb
+ init: begin check errors,  cpu clock=  2.19E-01
+ init: end check errors,  cpu clock=  2.60E-01 peak memory=       120 mb
+ init: begin setup matrix, pivot=     0 cpu clock=  2.60E-01
+       establish matrix -- done,  cpu clock=  2.61E-01 peak memory=       120 mb
+       re-order matrix -- done,  cpu clock=  2.61E-01 peak memory=       120 mb
+ init: end setup matrix,  cpu clock=  2.62E-01 peak memory=       120 mb
+ dcop: begin dcop,  cpu clock=  2.62E-01
+ dcop: end dcop,  cpu clock=  2.69E-01 peak memory=       120 mb  tot_iter=       5
+ output: Robustez_Array_8tser.tr0
+ sweep: tran tran0    begin, stop_t=  8.00E-09 #sweeps= 801 cpu clock=  2.69E-01
+ tran: time= 9.9861E-10 tot_iter=     345 conv_iter=      61 cpu clock= 3.39E-01
+ tran: time= 1.6317E-09 tot_iter=     924 conv_iter=     159 cpu clock= 4.47E-01
+ tran: time= 2.5629E-09 tot_iter=    1316 conv_iter=     224 cpu clock= 5.00E-01
+ tran: time= 3.4877E-09 tot_iter=    1322 conv_iter=     227 cpu clock= 5.00E-01
+ tran: time= 4.2877E-09 tot_iter=    1326 conv_iter=     229 cpu clock= 5.01E-01
+ tran: time= 5.0877E-09 tot_iter=    1330 conv_iter=     231 cpu clock= 5.01E-01
+ tran: time= 5.8877E-09 tot_iter=    1334 conv_iter=     233 cpu clock= 5.02E-01
+ tran: time= 6.6877E-09 tot_iter=    1338 conv_iter=     235 cpu clock= 5.02E-01
+ tran: time= 7.4877E-09 tot_iter=    1342 conv_iter=     237 cpu clock= 5.02E-01
+ tran: time= 8.0000E-09 tot_iter=    1346 conv_iter=     239 cpu clock= 5.03E-01
+ sweep: tran tran0    end,  cpu clock=  5.03E-01 peak memory=       120 mb
+>info:         ***** hspice job concluded
+ lic: Release hspice token(s)

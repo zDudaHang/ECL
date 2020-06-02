@@ -1,0 +1,38 @@
+* "simulator" "HSPICE" 
+* "version" "H-2013.03-SP1 32-BIT"
+* "format" "HSP"
+* "rundate" "16:53:29 05/16/2020 "
+* "netlist" "Robustez_Array_6T.txt "
+* "runtitle" "'array 6t 128 celulas finfet'"
+* time =    0.            
+* temperature =   25.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ bit =   0.            
++ bl = 539.1088m       
++ blb = 642.7881m       
++ out = 539.1088m       
++ outb = 642.7881m       
++ pre =   0.            
++ q = 700.0000m       
++ q0 = 700.0000m       
++ q0b = 206.7204n       
++ q1 =  22.0040p       
++ q1b = 699.9998m       
++ qb = 206.7244n       
++ sae =   0.            
++ vdd = 700.0000m       
++ we = 700.0000m       
++ wl =   0.            
++ wl0 =   0.            
++ wl1 =   0.            
++ xleitura.q = 680.0298m       
++ xleitura.q0 = 659.7447m       
++ xleitura.qb = 680.0298m       
++ xescrita.bitb = 699.9998m       
++ xescrita.web = 116.0307n       
++ xescrita.xe1 = 208.5622m       
++ xescrita.xe2 = 672.1121m       
+***   END: Saved Operating Point ***                     

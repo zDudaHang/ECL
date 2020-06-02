@@ -1,0 +1,98 @@
+* TOPOLOGIA 6T
+
+.options post = 2
+
+.include 32nm_HP.pm
+
+.include Escrita.txt
+.include Leitura.txt
+.include PreCarga.txt
+
+* PARAMETROS
+
+* NODO
+.param length = 32n
+
+* TENSAO DO CIRCUITO
+.param supply = 0.9
+
+* DIMENSOES DA CELULA
+.param width = '2*length'
+
+* CIRCUITOS AUXILIARES
+.param width_aux = 210n
+
+* TEMPOS
+.param clock = 1g
+.param slope = '0.01*period' 
+.param period = '1/clock'
+.param step = 'period/7'
+
+.global supply gnd
+
+* SUPPLY DO CIRCUITO
+Vvdd vdd gnd DC supply
+
+* ======= SIMULACAO
+
+* ==== HOLD:
+*Vbit	 bit	 gnd	 PWL (0ns 0)
+*Vwe	 we	 gnd	 PWL(0ns 0)
+*Vwl	 wl	 gnd	 PWL(0ns 0)
+*Vpre	 pre	 gnd	 PWL(0ns 0)
+*Vsae	 sae	 gnd 	 PWL(0ns 0)
+
+* ==== WRITE 0: ESCREVER 1 -> ESCREVER 0 E INSERIR A FALHA NO TEMPO 
+Vbit bit gnd PWL(0ns supply 'period' supply 'period + slope' 0)
+
+Vwl wl gnd PWL(0ns 0 '3*step' 0 '3*step + slope' supply '4*step' supply '4*step + slope' 0
++ 'period + 3*step' 0 'period + 3*step + slope' supply 'period + 4*step' supply 'period + 4*step + slope' 0)
+
+Vwe we gnd PWL(0ns supply '2*period' supply '2*period + slope' 0)
+
+Vpre pre gnd PWL(0ns 0 'step' 0 'step + slope' supply '6*step' supply '6*step + slope' 0
++ 'period + step' 0 'period + step + slope' supply 'period + 6*step' supply 'period + 6*step + slope' 0)
+
+Vsae sae gnd PWL(0ns 0)
+
+* DECLARACAO DO CIRCUITO
+
+*  CIRCUITOS AUXILIARES
+
+* PRE-CARGA
+Xprecarga pre bl blb vdd gnd pre_carga width=width_aux length=length
+
+* LEITURA
+Xleitura sae bl blb out outb vdd gnd leitura width=width_aux length=length
+
+* ESCRITA
+Xescrita  bit we bl blb vdd gnd escrita width=width_aux length=length
+
+* 6T
+
+* TRANSISTORES DE PASSAGEM
+MN2 bl wl q gnd NMOS w = width l = length
+MN3 blb wl qb gnd NMOS w = width l = length
+
+* CELULA
+
+* PRIMEIRO INVERSOR
+MP0 vdd qb q vdd PMOS w = width l = length
+MN0 q qb gnd gnd NMOS w = width l = length
+
+* SEGUNDO INVERSOR
+MP1 vdd q qb vdd PMOS w = width l = length
+MN1 qb q gnd gnd NMOS w = width l = length
+
+* INICIALIZANDO O VALOR DE Q
+.ic v(q) = 0
+
+
+* TESTE DE ROBUSTEZ
+* 010 : gnd nodo
+* 101 : nodo gnd
+*Iexp qb gnd exp(0 1 0.1n 10p 0.10001ns 320p)
+
+.tran 0.01ns '4*period'
+
+.end

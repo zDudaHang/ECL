@@ -1,0 +1,32 @@
+* "simulator" "HSPICE" 
+* "version" "H-2013.03-SP1 32-BIT"
+* "format" "HSP"
+* "rundate" "11:16:32 03/05/2020 "
+* "netlist" "robustez_8tser.txt "
+* "runtitle" "'8t-ser 0.5ghz - robustez'"
+* time =    0.            
+* temperature =   25.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ bit =   0.            
++ bl =  18.7532m       
++ blb = 306.8612n       
++ out = 330.8718m       
++ outb = 330.8719m       
++ pre =   0.            
++ q = 699.9998m       
++ q2 = 700.0000m       
++ q2b = 730.5093f       
++ qb = 115.7175n       
++ sae =   0.            
++ vdd = 700.0000m       
++ we =   0.            
++ wl =   0.            
++ xescrita.bitb = 699.9998m       
++ xescrita.web = 699.9998m       
++ xescrita.xe1 = 142.3837n       
++ xescrita.xe2 = 699.9995m       
++ xleitura.xsa1 = 674.0714m       
+***   END: Saved Operating Point ***                     

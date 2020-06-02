@@ -1,0 +1,6 @@
+$DATA1 SOURCE='HSPICE' VERSION='H-2013.03-SP1 32-BIT'
+.TITLE '* topologia pdice'
+ escrita_0        leitura_0        escrita_1        leitura_1         
+ energia_vdd      temper           alter#            
+  1.088e-11        6.650e-11        1.353e-11        1.551e-12        
+ -5.616e-14         25.0000        1                 

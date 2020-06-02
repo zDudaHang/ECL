@@ -1,0 +1,51 @@
+
+.TILE 'Validação da 6T 7nm TT com 0.5GHz'
+
+.OPTION POST = 2
+.PRINT v(q) v(qb) v(bl) v(blb) v(pre) v(wl) v(sae) v(bit) v(we)
+
+* MODELO
+.include '../../Circuitos/Finfet/Modelos/7nm_TT.pm'
+
+* CIRCUITOS
+.include '../../Circuitos/Finfet/Celula/6T.txt'
+.include '../../Circuitos/Finfet/Escrita/Padrao.txt'
+.include '../../Circuitos/Finfet/Pre_Carga/Padrao.txt'
+.include '../../Circuitos/Finfet/Sense_Amplifier/Padrao.txt'
+
+* ONDAS
+.include '../../Circuitos/Finfet/Ondas/Validacao.txt'
+
+* PARAMETROS
+.param fin_auxiliares = 1
+.param fin = 1
+
+* TENSAO DO CIRCUITO
+.param supply = 0.7
+
+* TEMPO
+.param clock = 0.5g
+.param slope = '0.01*period'
+.param period = '1/clock'
+.param step = 'period/7'
+
+.global supply gnd
+
+* INICIALIZACOES
+.ic v(q) = supply
+.ic v(qb) = 0
+
+* RESULTADOS
+.tran 0.01ns '4*period'
+
+.measure tran Escrita_0 trig v(wl) val='supply/2' rise=1 targ v(q) val='supply/2' fall=1
+
+.measure tran Leitura_0 trig v(wl) val='supply/2' rise=2 targ v(bl) val='supply*0.9' fall=1
+
+.measure tran Escrita_1 trig v(wl) val='supply/2'  rise=3 targ v(q) val='supply/2' rise=1
+
+.measure tran Leitura_1 trig v(wl) val='supply/2'  rise=4 targ v(blb) val='supply*0.9' fall=4
+
+.measure tran Energia_vdd INTEG i(Vvdd) from=0 to='4*period'
+
+.end

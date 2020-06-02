@@ -1,0 +1,25 @@
+* CIRCUITO DE ESCRITA
+
+.subckt escrita bit we bl blb vdd gnd length=sup_length fin=sup_fin
+
+* INVERSOR DO BIT
+M1_bit vdd bit bitb vdd pmos_rvt  l=length nfin=fin
+M2_bit bitb bit gnd gnd nmos_rvt  l=length nfin=fin
+
+* INVERSOR DO WE
+M1_we vdd we web vdd pmos_rvt  l=length nfin= fin
+M2_we web we gnd gnd nmos_rvt  l=length nfin=fin
+
+* ESCRITA EM BL
+M1 gnd bitb out_bl gnd nmos_rvt  l=length nfin=fin
+M2 out_bl we bl gnd nmos_rvt  l=length nfin=fin
+M3 vdd bitb out_bl vdd pmos_rvt  l=length nfin=fin
+M4 out_bl web bl vdd pmos_rvt  l=length nfin=fin
+
+* ESCRITA EM BLB
+M5 gnd bit out_blb gnd nmos_rvt  l=length nfin=fin
+M6 out_blb we blb gnd nmos_rvt  l=length nfin=fin
+M7 vdd bit out_blb vdd pmos_rvt  l=length nfin=fin
+M8 out_blb web blb vdd pmos_rvt  l=length nfin=fin
+
+.ends escrita

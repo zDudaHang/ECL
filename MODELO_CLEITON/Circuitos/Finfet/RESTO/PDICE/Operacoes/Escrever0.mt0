@@ -1,0 +1,4 @@
+$DATA1 SOURCE='HSPICE' VERSION='H-2013.03-SP1 32-BIT'
+.TITLE '* circuito pdice'
+ escrita_0        energia_vdd      temper           alter#            
+  9.032e-12       -5.643e-15         25.0000        1                 

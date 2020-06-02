@@ -1,0 +1,21 @@
+* Fontes DC
+Vcell	vcell	gnd		DC	supply
+Vvdd	vdd		gnd		DC	supply
+Vwl2	wl2		gnd		DC	0
+Vwl22	wl22	gnd		DC	0
+
+								
+Vwe	    we	    gnd		PWL ('0*ts_w'              0       '2*ts_w'              0   
+							+ '2*ts_w+slope'        supply  '5*ts_w'              supply   
+							+ '5*ts_w+slope'        0       '6*ts_w'              0)
+
+Vwl 	wl	    gnd		PWL ('0*ts_w'              0       '3*ts_w'              0 
+							+ '3*ts_w+slope'        supply  '4*ts_w'              supply 
+							+ '4*ts_w+slope'        0       'unit+2*ts_r'         0)
+
+
+Vpre 	pre	    gnd		PWL ('0*ts_w'              0       'ts_w'                0 
+							+ 'ts_w+slope'          supply  '6*ts_w'              supply 
+							+ '6*ts_w+slope'        0       'unit+ts_r'           0)
+
+Vsae 	sae	    gnd		DC  gnd

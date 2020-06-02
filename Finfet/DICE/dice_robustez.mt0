@@ -1,0 +1,4 @@
+$DATA1 SOURCE='HSPICE' VERSION='H-2013.03-SP1 32-BIT'
+.TITLE '* circuito dice'
+ bitflip          temper           alter#            
+    failed          25.0000        1                 

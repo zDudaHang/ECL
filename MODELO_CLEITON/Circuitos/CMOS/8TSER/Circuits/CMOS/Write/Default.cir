@@ -1,0 +1,19 @@
+		* Inversor Bit
+		Minv_bit1	vdd		bit		bitb	vdd		PMOS	w=w_pwe		l=length	
+		Minv_bit2	bitb	bit		gnd		gnd		NMOS	w=w_nwe		l=length
+
+		* Inversor Write Enable
+		Minv_we1	vdd		we		web		vdd		PMOS	w=w_pwe		l=length	
+		Minv_we2	web		we		gnd		gnd		NMOS	w=w_nwe		l=length
+
+		* Escreve em BL
+		Mme1	vdd		bitb	xe1		vdd		PMOS	w=w_pwe		l=length
+		Mme2	gnd		bitb	xe1		gnd		NMOS	w=w_nwe		l=length
+		Mme3	xe1		we		bl		gnd		NMOS	w=w_nwe		l=length
+		Mme4	xe1		web		bl		vdd		PMOS	w=w_pwe		l=length
+
+		* Escreve em BLB
+		Mme5	vdd		bit		xe2		vdd		PMOS	w=w_pwe		l=length
+		Mme6	gnd		bit		xe2		gnd		NMOS	w=w_nwe		l=length
+		Mme7	xe2		we		blb		gnd		NMOS	w=w_nwe		l=length
+		Mme8	xe2		web		blb		vdd		PMOS	w=w_pwe		l=length

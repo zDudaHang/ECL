@@ -1,0 +1,221 @@
+Mdi:FullSize
+ScopeSigMgr:loadpffile /home/mariahang/ECL/Finfet/6T/Robustez_Array_6T.tr0 1 openonly
+# PF:1
+wm geometry .sigmgr._PF:1 288x349+670+376
+wm geometry .sigmgr._PF:1 288x349+669+375
+wm geometry .sigmgr._PF:1 288x349+667+374
+wm geometry .sigmgr._PF:1 288x349+656+365
+wm geometry .sigmgr._PF:1 288x349+642+354
+wm geometry .sigmgr._PF:1 288x349+608+330
+wm geometry .sigmgr._PF:1 288x349+569+305
+wm geometry .sigmgr._PF:1 288x349+539+285
+wm geometry .sigmgr._PF:1 288x349+510+266
+wm geometry .sigmgr._PF:1 288x349+432+208
+wm geometry .sigmgr._PF:1 288x349+428+204
+wm geometry .sigmgr._PF:1 288x349+428+203
+pf:read PF:1 v(q)
+# WF:1:1
+Graph addsignal WF:1:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:1 v(qb)
+# WF:1:2
+Graph addsignal WF:1:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+wm geometry .sigmgr._PF:1 288x349+438+211
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:loadpffile /home/mariahang/ECL/Finfet/6T/Robustez_Array_6T.tr0 1 openonly
+# PF:3
+pf:read PF:3 v(bit)
+# WF:3:3
+Graph addsignal WF:3:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal6
+pf:read PF:3 v(sae)
+# WF:3:4
+Graph addsignal WF:3:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal7
+wm geometry .sigmgr._PF:1 288x349+438+211
+wm geometry .sigmgr 472x220+884+136
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+Mdi:Move 137 115
+Mdi:Move 137 115
+Mdi:Move 68 87
+Mdi:Move 1 2
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0) AxisY(2,0) AxisY(3,0)} -range {all all all all all} -zoomed {0 0 0 0 0}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_6T.tr0}}
+ScopeSigMgr:Unload 1
+Graph0 delsignal Signal164
+Graph0 delsignal Signal165
+Graph0 delsignal Signal166
+Graph0 delsignal Signal167
+GrXY:NewGraph
+# Graph1
+Mdi:FullSize
+ScopeSigMgr:loadpffile /home/mariahang/ECL/Finfet/DICE/Robustez_Array_Dice.tr0 1 openonly
+# PF:44
+wm geometry .sigmgr._PF:44 288x349+673+375
+wm geometry .sigmgr._PF:44 288x349+659+361
+wm geometry .sigmgr._PF:44 288x349+652+353
+wm geometry .sigmgr._PF:44 288x349+645+347
+wm geometry .sigmgr._PF:44 288x349+638+338
+wm geometry .sigmgr._PF:44 288x349+630+328
+wm geometry .sigmgr._PF:44 288x349+622+317
+wm geometry .sigmgr._PF:44 288x349+614+305
+wm geometry .sigmgr._PF:44 288x349+605+291
+wm geometry .sigmgr._PF:44 288x349+599+281
+wm geometry .sigmgr._PF:44 288x349+593+271
+wm geometry .sigmgr._PF:44 288x349+589+262
+wm geometry .sigmgr._PF:44 288x349+586+254
+wm geometry .sigmgr._PF:44 288x349+586+247
+wm geometry .sigmgr._PF:44 288x349+585+240
+wm geometry .sigmgr._PF:44 288x349+585+234
+wm geometry .sigmgr._PF:44 288x349+584+227
+wm geometry .sigmgr._PF:44 288x349+585+226
+pf:read PF:44 v(bit)
+# WF:44:1
+Graph addsignal WF:44:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:44 v(pre)
+# WF:44:2
+Graph addsignal WF:44:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+pf:read PF:44 v(we)
+# WF:44:3
+Graph addsignal WF:44:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+pf:read PF:44 v(wl)
+# WF:44:4
+Graph addsignal WF:44:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+pf:read PF:44 v(x0)
+# WF:44:5
+Graph addsignal WF:44:5 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal4
+wm geometry .sigmgr._PF:44 288x349+595+234
+wm geometry .sigmgr 472x220+884+136
+Graph:DSel
+Graph:Select Graph1
+Graph axisconfig {AxisY(3,0) AxisX(0)} -range {{0.26769819495612 -0.21187532540659} {2.75985n 2.96411n}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0) AxisY(2,0) AxisY(3,0) AxisY(4,0)} -range {all all all all all all} -zoomed {0 0 0 0 0 0}
+Graph:DSel
+Graph axisconfig {AxisY(3,0) AxisX(0)} -range {{0.87260585948666 -0.26484415675824} {2.8162n 3.0275n}}
+Graph:DSel
+Graph itemselect Signal3 add
+# Signal3
+GrMeas:AtX Graph1 Signal3 {} xyrangeVisible
+# M:0
+Graph:DSel
+GrMeas:Select Graph1 M:0 0 1
+GrMeas:MovePoint Graph1 M:0 0 2.8809626747461n 0.70000027388575
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0) AxisY(2,0) AxisY(3,0) AxisY(4,0)} -range {all all all all all all} -zoomed {0 0 0 0 0 0}
+Graph:Select Graph1
+Graph delsignal selected
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+GrXY:NewGraph
+# Graph2
+ScopeSigMgr:Unload 1
+ScopeSigMgr:loadpffile /home/mariahang/ECL/Finfet/DICE/Robustez_Array_Dice.tr0 1 openonly
+# PF:47
+wm geometry .sigmgr._PF:47 288x349+665+361
+wm geometry .sigmgr._PF:47 288x349+656+343
+wm geometry .sigmgr._PF:47 288x349+653+334
+wm geometry .sigmgr._PF:47 288x349+642+307
+wm geometry .sigmgr._PF:47 288x349+633+280
+wm geometry .sigmgr._PF:47 288x349+631+271
+wm geometry .sigmgr._PF:47 288x349+630+258
+wm geometry .sigmgr._PF:47 288x349+631+252
+wm geometry .sigmgr._PF:47 288x349+632+249
+wm geometry .sigmgr._PF:47 288x349+633+248
+wm geometry .sigmgr._PF:47 288x349+634+247
+pf:read PF:47 v(x0)
+# WF:47:1
+Graph addsignal WF:47:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:47 v(x1)
+# WF:47:2
+Graph addsignal WF:47:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+pf:read PF:47 v(x2)
+# WF:47:3
+Graph addsignal WF:47:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+pf:read PF:47 v(x3)
+# WF:47:4
+Graph addsignal WF:47:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+wm geometry .sigmgr._PF:47 288x349+644+255
+wm geometry .sigmgr 472x220+884+136
+Graph:Select Graph2
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph sigconfig Signal1 -region 0 -rgnindex 1
+Graph:DSel
+Graph itemselect Signal3 add
+# Signal3
+Graph sigconfig Signal3 -region 1 -rgnindex 1
+Graph:DSel
+Graph:DSel
+ScopeSigMgr:loadpffile /home/mariahang/ECL/Finfet/DICE/Robustez_Array_Dice.tr0 1 openonly
+# PF:47
+pf:read PF:47 v(wl)
+# WF:47:5
+Graph addsignal WF:47:5 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal4
+wm geometry .sigmgr._PF:47 288x349+644+255
+wm geometry .sigmgr 472x220+884+136
+Graph:DSel
+Graph:Select Graph2
+Graph axisconfig {AxisY(2,0) AxisX(0)} -range {{0.70587081128184 -0.06632256647049} {2.73872n 3.04863n}}
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0) AxisY(2,0)} -range {all all all all} -zoomed {0 0 0 0}
+Graph:DSel
+Graph:Select Graph2
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.33656875364364 -0.25330119221373} {2.68237n 3.17542n}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0) AxisY(2,0)} -range {all all all all} -zoomed {0 0 0 0}
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}

@@ -1,0 +1,32 @@
+* "simulator" "HSPICE" 
+* "version" "H-2013.03-SP1 32-BIT"
+* "format" "HSP"
+* "rundate" "21:17:41 12/08/2019 "
+* "netlist" "6t_robustez.txt "
+* "runtitle" "* topologia 6t"
+* time =    0.            
+* temperature =   25.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ bit = 407.6283m       
++ bl = 781.8112m       
++ blb = 814.3457m       
++ out = 781.8112m       
++ outb = 814.3457m       
++ pre = 142.1734m       
++ q =  26.0120p       
++ qb = 900.0000m       
++ sae = 203.8753m       
++ vdd = 900.0000m       
++ we = 506.1592m       
++ wl =   0.            
++ xleitura.q = 639.9309m       
++ xleitura.q0 = 367.4413m       
++ xleitura.qb = 639.9309m       
++ xescrita.bitb = 504.7772m       
++ xescrita.q0 = 540.0844m       
++ xescrita.q1 = 743.7869m       
++ xescrita.web =  82.5923m       
+***   END: Saved Operating Point ***                     

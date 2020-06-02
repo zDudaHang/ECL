@@ -1,0 +1,171 @@
+* TOPOLOGIA DICE
+
+.TITLE "Array DICE "
+
+.include 7nm_TT.pm
+
+.include Escrita.txt
+.include PreCarga.txt
+
+* PARAMETROS
+.param fin_auxiliares = 1
+.param fin = 1
+.param num_cel = 128
+
+* TENSAO DO CIRCUITO
+.param supply = 0.7
+
+* TEMPO
+.param clock = 1g
+.param slope = '0.01*period'
+.param period = '1/clock'
+.param step = 'period/7'
+
+.global supply gnd
+
+* SUPPLY DO CIRCUITO
+Vvdd vdd gnd DC supply
+
+* SIMULACAO
+Vwl0 wl_63 gnd PWL (0ns 0)
+Vwl1 wl_64 gnd PWL (0ns 0)
+
+Vbit bit gnd PWL(0ns supply 'period' supply 'period + slope' 0)
+
+Vwe we gnd PWL(0ns supply 'period' supply 'period + slope' 0
++ '2*period' 0 '2*period + slope' supply
++ '3*period' supply '3*period + slope' 0)
+
+Vwl wl gnd PWL(0ns 0 '3*step' 0 '3*step + slope' supply '4*step' supply '4*step + slope' 0
++ 'period + 3*step' 0 'period + 3*step + slope' supply 'period + 4*step' supply 'period + 4*step + slope' 0
++ '2*period + 3*step' 0 '2*period + 3*step + slope' supply '2*period + 4*step' supply '2*period + 4*step + slope' 0
++ '3*period + 3*step' 0 '3*period + 3*step + slope' supply '3*period + 4*step' supply '3*period + 4*step + slope' 0)
+
+Vpre pre gnd PWL(0ns 0 'step' 0 'step + slope' supply '6*step' supply '6*step + slope' 0
++ 'period + step' 0 'period + step + slope' supply 'period + 6*step' supply 'period + 6*step + slope' 0
++ '2*period + step' 0 '2*period + step + slope' supply '2*period + 6*step' supply '2*period + 6*step + slope' 0
++ '3*period + step' 0 '3*period + step + slope' supply '3*period + 6*step' supply '3*period + 6*step + slope' 0)
+
+* DECLARACAO DO CIRCUITO
+
+*  CIRCUITOS AUXILIARES
+
+* PRE-CARGA
+Xprecarga pre bl blb vdd gnd pre_carga fin=fin_auxiliares
+
+* ESCRITA
+Xescrita  bit we bl blb vdd gnd escrita fin=fin_auxiliares
+
+* ====== ARRAY DA DICE
+
+* === CELULA TESTE COM VALOR 1
+
+* INVERSOR 0
+MP0 vdd x3 x0 vdd pmos_rvt nfin = fin
+MN0 x0 x1 gnd gnd nmos_rvt nfin = fin
+
+* INVERSOR 1
+MP1 vdd x0 x1 vdd pmos_rvt nfin = fin
+MN1 x1 x2 gnd gnd nmos_rvt nfin = fin
+
+* INVERSOR 2
+MP2 vdd x1 x2 vdd pmos_rvt nfin = fin
+MN2 x2 x3 gnd gnd nmos_rvt nfin = fin
+
+* INVERSOR 3
+MP3 vdd x2 x3 vdd pmos_rvt nfin = fin
+MN3 x3 x0 gnd gnd nmos_rvt nfin = fin
+
+* TRANSISTORES DE PASSAGEM
+MN5 x1 wl bl gnd nmos_rvt nfin = fin
+MN7 x3 wl bl gnd nmos_rvt nfin = fin
+
+MN6 x2 wl blb gnd nmos_rvt nfin = fin
+MN4 x0 wl blb gnd nmos_rvt nfin = fin
+
+* === 63 CELULAS COM VALOR 1
+
+* INVERSOR 0
+MP8 vdd x3_63 x0_63 vdd pmos_rvt nfin = 'fin*((num_cel/2)-1)'
+MN8 x0_63 x1_63 gnd gnd nmos_rvt nfin = 'fin*((num_cel/2)-1)'
+
+* INVERSOR 1
+MP9 vdd x0_63 x1_63 vdd pmos_rvt nfin = 'fin*((num_cel/2)-1)'
+MN9 x1_63 x2_63 gnd gnd nmos_rvt nfin = 'fin*((num_cel/2)-1)'
+
+* INVERSOR 2
+MP10 vdd x1_63 x2_63 vdd pmos_rvt nfin = 'fin*((num_cel/2)-1)'
+MN10 x2_63 x3_63 gnd gnd nmos_rvt nfin = 'fin*((num_cel/2)-1)'
+
+* INVERSOR 3
+MP11 vdd x2_63 x3_63 vdd pmos_rvt nfin = 'fin*((num_cel/2)-1)'
+MN11 x3_63 x0_63 gnd gnd nmos_rvt nfin = 'fin*((num_cel/2)-1)'
+
+* TRANSISTORES DE PASSAGEM
+MN13 x1_63 wl_63 bl gnd nmos_rvt nfin = 'fin*((num_cel/2)-1)'
+MN14 x3_63 wl_63 bl gnd nmos_rvt nfin = 'fin*((num_cel/2)-1)'
+
+MN15 x2_63 wl_63 blb gnd nmos_rvt nfin = 'fin*((num_cel/2)-1)'
+MN12 x0_63 wl_63 blb gnd nmos_rvt nfin = 'fin*((num_cel/2)-1)'
+
+* === 64 CELULAS COM VALOR 0
+
+* INVERSOR 0
+MP16 vdd x3_64 x0_64 vdd pmos_rvt nfin = 'fin*(num_cel/2)'
+MN16 x0_64 x1_64 gnd gnd nmos_rvt nfin = 'fin*(num_cel/2)'
+
+* INVERSOR 1
+MP17 vdd x0_64 x1_64 vdd pmos_rvt nfin = 'fin*(num_cel/2)'
+MN17 x1_64 x2_64 gnd gnd nmos_rvt nfin = 'fin*(num_cel/2)'
+
+* INVERSOR 2
+MP18 vdd x1_64 x2_64 vdd pmos_rvt nfin = 'fin*(num_cel/2)'
+MN18 x2_64 x3_64 gnd gnd nmos_rvt nfin = 'fin*(num_cel/2)'
+
+* INVERSOR 3
+MP19 vdd x2_64 x3_64 vdd pmos_rvt nfin = 'fin*(num_cel/2)'
+MN19 x3_64 x0_64 gnd gnd nmos_rvt nfin = 'fin*(num_cel/2)'
+
+* TRANSISTORES DE PASSAGEM
+MN21 x1_64 wl_64 bl gnd nmos_rvt nfin = 'fin*(num_cel/2)'
+MN22 x3_64 wl_64 bl gnd nmos_rvt nfin = 'fin*(num_cel/2)'
+
+MN23 x2_64 wl_64 blb gnd nmos_rvt nfin = 'fin*(num_cel/2)'
+MN20 x0_64 wl_64 blb gnd nmos_rvt nfin = 'fin*(num_cel/2)'
+
+* CAPACITORES
+* Cblb blb gnd 20f
+* Cbl bl gnd 20f
+
+* ====== INICIALIZACOES
+
+* === CELULA TESTE
+.ic v(x0) = supply
+.ic v(x1) = 0
+.ic v(x2) = supply
+.ic v(x3) = 0
+
+* === 63 CELULAS
+.ic v(x0_63) = supply
+.ic v(x1_63) = 0
+.ic v(x2_63) = supply
+.ic v(x3_63) = 0
+
+* === 64 CELULAS
+.ic v(x0_64) = 0
+.ic v(x1_64) = supply
+.ic v(x2_64) = 0
+.ic v(x3_64) = supply
+
+* RESULTADOS
+
+.tran 0.01ns '4*period'
+
+.measure tran Escrita_0 trig v(wl) val='supply/2' rise=1 targ v(x0) val='supply/2' fall=1
+.measure tran Leitura_0 trig v(wl) val='supply/2' rise=2 targ v(blb) val='supply*0.7' fall=2
+.measure tran Escrita_1 trig v(wl) val='supply/2'  rise=3 targ v(x0) val='supply/2' rise=1
+.measure tran Leitura_1 trig v(wl) val='supply/2'  rise=4 targ v(bl) val='supply*0.7' fall=2
+.measure tran Energia_vdd INTEG i(Vvdd) from=0.0 to='4*period'
+
+
+.end

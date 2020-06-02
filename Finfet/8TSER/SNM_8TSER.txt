@@ -1,0 +1,63 @@
+* TOPOLOGIA 8T-SER
+
+.TITLE 'SNM 8T-SER 0.5GHz'
+
+.OPTION POST = 2
+.PRINT DC v(q) v(qb) v(q2) v(q2b)
+
+.include 7nm_TT.pm
+
+* PARAMETROS
+.param fin = 1
+
+* TENSAO DO CIRCUITO
+.param supply = 0.7
+
+* SUPPLY DO CIRCUITO
+Vvdd vdd gnd DC supply
+Vvn vn gnd DC 0
+
+* Vq q vn DC 0
+* Vq2 q2 vn DC 0
+
+Vqb qb vn DC 0
+Vq2b q2b vn DC 0
+
+* ==================== SNM
+
+* ==== HOLD
+* => WL = 0
+* Vwl wl gnd DC 0
+* Vbl bl gnd DC 0
+* Vblb blb gnd DC 0
+
+* ==== READ 0
+* WL = 1 BL e BLB = 1
+* Vwl wl gnd DC supply
+* Vbl bl gnd DC 0
+* Vblb blb gnd DC 0
+
+* ==== WRITE 1
+Vwl wl gnd DC supply
+Vbl bl gnd DC 0
+Vblb blb gnd DC supply
+
+*Pull-UP
+Mp1     vdd     q2      qb     vdd   pmos_rvt   nfin = fin
+Mp2     q         q2b     vdd  vdd   pmos_rvt   nfin = fin
+Mp3     vdd     q2b     q2     vdd   pmos_rvt   nfin = fin
+Mp4     q2b       q2      vdd  vdd   pmos_rvt   nfin = fin
+
+*Access WL
+Mn1     wl        q       qb     gnd     nmos_rvt   nfin = fin
+Mn2     q         qb      wl     gnd     nmos_rvt   nfin = fin
+
+*Access Bitlines
+Mn3     bl        qb      q2     gnd     nmos_rvt   nfin = fin
+Mn4     q2b       q       blb    gnd     nmos_rvt   nfin = fin
+
+
+* RESULTADOS
+.DC Vvn 0 'supply' 'supply*0.001'
+
+.end
