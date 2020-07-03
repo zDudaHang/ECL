@@ -82,7 +82,6 @@ MN0 q qb gnd gnd NMOS w = width l = length
 * SEGUNDO INVERSOR
 MP1 vdd q qb vdd PMOS w = width l = length
 MN1 qb q gnd gnd NMOS w = width l = length
-Iteste q gnd 0
 
 * INICIALIZANDO O VALOR DE Q
 .ic v(q) = supply
@@ -100,4 +99,5 @@ Iteste q gnd 0
 .measure tran Leitura_1 trig v(wl) val='supply/2'  rise=4 targ v(blb) val='supply*0.9' fall=4
 
 .measure tran Energia_vdd INTEG i(Vvdd) from=0.0 to='4*period'
+
 .end

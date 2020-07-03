@@ -1,17 +1,98 @@
-Mdi:ArrangeIcons
 Mdi:FullSize
-ScopeSigMgr:loadpffile /home/mariahang/ECL/CMOS/6T/6t.tr0 1 openonly
+ScopeSigMgr:loadpffile /home/mariahang/ECL/CMOS/6T/SNM.sw0 1 openonly
 # PF:1
-wm geometry .sigmgr._PF:1 288x349+1417+373
-wm geometry .sigmgr._PF:1 288x349+1417+368
-wm geometry .sigmgr._PF:1 288x349+1417+357
-wm geometry .sigmgr._PF:1 288x349+1438+344
-wm geometry .sigmgr._PF:1 288x349+1451+324
-wm geometry .sigmgr._PF:1 288x349+1461+311
-wm geometry .sigmgr._PF:1 288x349+1484+277
-wm geometry .sigmgr._PF:1 288x349+1497+261
-wm geometry .sigmgr._PF:1 288x349+1504+252
-wm geometry .sigmgr._PF:1 288x349+1509+246
-wm geometry .sigmgr._PF:1 288x349+1510+243
-wm geometry .sigmgr._PF:1 288x349+1511+242
-wm geometry .sigmgr._PF:1 288x349+1521+250
+wm geometry .sigmgr._PF:1 288x349+1423+375
+wm geometry .sigmgr._PF:1 288x349+1423+373
+wm geometry .sigmgr._PF:1 288x349+1423+363
+wm geometry .sigmgr._PF:1 288x349+1423+349
+wm geometry .sigmgr._PF:1 288x349+1423+331
+wm geometry .sigmgr._PF:1 288x349+1442+315
+wm geometry .sigmgr._PF:1 288x349+1445+298
+wm geometry .sigmgr._PF:1 288x349+1447+279
+wm geometry .sigmgr._PF:1 288x349+1449+263
+wm geometry .sigmgr._PF:1 288x349+1450+249
+wm geometry .sigmgr._PF:1 288x349+1452+234
+wm geometry .sigmgr._PF:1 288x349+1453+223
+wm geometry .sigmgr._PF:1 288x349+1455+214
+wm geometry .sigmgr._PF:1 288x349+1457+208
+wm geometry .sigmgr._PF:1 288x349+1457+204
+wm geometry .sigmgr._PF:1 288x349+1458+202
+wm geometry .sigmgr._PF:1 288x349+1459+201
+pf:read PF:1 v(q)
+# WF:1:1
+Graph addsignal WF:1:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:1 v(qb)
+# WF:1:2
+Graph addsignal WF:1:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+wm geometry .sigmgr._PF:1 288x349+1469+209
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph sigconfig Signal1 -region 0 -rgnindex 1
+Graph:DSel
+ScopeSigMgr:loadpffile /home/mariahang/ECL/CMOS/6T/SNM.sw0 1 append
+# PF:1
+pf:read PF:1 v(wl)
+# WF:1:3
+Graph addsignal WF:1:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+pf:read PF:1 v(bl)
+# WF:1:4
+Graph addsignal WF:1:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+pf:read PF:1 v(blb)
+# WF:1:5
+Graph addsignal WF:1:5 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal4
+wm geometry .sigmgr._PF:1 288x349+1469+209
+wm geometry .sigmgr 472x220+884+109
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal4 add
+# Signal4
+Graph sigconfig Signal4 -region 2 -rgnindex 1
+Graph:DSel
+Graph:DSel
+Graph:Select Graph0
+Graph:DSel
+ScopeSigMgr:Unload 0 {{(1) SNM.sw0}}
+Graph0 delsignal Signal0
+Graph0 delsignal Signal1
+Graph0 delsignal Signal2
+Graph0 delsignal Signal3
+Graph0 delsignal Signal4
+ScopeSigMgr:Unload 0 {{(1) SNM.sw0}}
+ScopeSigMgr:loadpffile /home/mariahang/ECL/CMOS/DICE/SNM.sw0 1 openonly
+# PF:2
+pf:read PF:2 v(x0)
+# WF:2:1
+Graph addsignal WF:2:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:2 v(x1)
+# WF:2:2
+Graph addsignal WF:2:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+pf:read PF:2 v(x2)
+# WF:2:3
+Graph addsignal WF:2:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+pf:read PF:2 v(x3)
+# WF:2:4
+Graph addsignal WF:2:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+wm geometry .sigmgr._PF:2 288x349+1433+384
+wm geometry .sigmgr 472x220+884+109
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal3 add
+# Signal3
+Graph sigconfig Signal3 -region 2 -rgnindex 1
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph sigconfig Signal1 -region 0 -rgnindex 1
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(1) SNM.sw0}}

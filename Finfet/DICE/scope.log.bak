@@ -1,15 +1,7 @@
 Mdi:FullSize
-ScopeSigMgr:loadpffile /home/mariahang/ECL/Finfet/DICE/Robustez_Array_Dice.tr0 1 openonly
+ScopeSigMgr:loadpffile /home/mariahang/ECL/Finfet/DICE/SNM_Dice.sw0 1 openonly
 # PF:1
-wm geometry .sigmgr._PF:1 288x349+670+372
-wm geometry .sigmgr._PF:1 288x349+665+365
-wm geometry .sigmgr._PF:1 288x349+658+353
-wm geometry .sigmgr._PF:1 288x349+650+339
-wm geometry .sigmgr._PF:1 288x349+635+313
-wm geometry .sigmgr._PF:1 288x349+623+294
-wm geometry .sigmgr._PF:1 288x349+621+287
-wm geometry .sigmgr._PF:1 288x349+619+282
-wm geometry .sigmgr._PF:1 288x349+619+279
+wm geometry .sigmgr._PF:1 288x349+604+205
 pf:read PF:1 v(x0)
 # WF:1:1
 Graph addsignal WF:1:1 -region new -yview real(y) -xview real(x) -tracehi 2
@@ -26,7 +18,102 @@ pf:read PF:1 v(x3)
 # WF:1:4
 Graph addsignal WF:1:4 -region new -yview real(y) -xview real(x) -tracehi 2
 # Signal3
-wm geometry .sigmgr._PF:1 288x349+629+287
+wm geometry .sigmgr._PF:1 288x349+614+213
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph sigconfig Signal1 -region 0 -rgnindex 1
+Graph:DSel
+Graph itemselect Signal3 add
+# Signal3
+Graph sigconfig Signal3 -region 1 -rgnindex 1
+Graph:DSel
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(1) SNM_Dice.sw0}}
+ScopeSigMgr:Reload 0 {{(1) SNM_Dice.sw0}}
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal8 add
+# Signal8
+Graph:DSel
+Graph itemselect Signal9 add
+# Signal9
+Graph:DSel
+Graph itemselect Signal8 add
+# Signal8
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(1) SNM_Dice.sw0}}
+ScopeSigMgr:loadpffile /home/mariahang/ECL/Finfet/DICE/SNM_Dice.sw0 1 openonly
+# PF:5
+wm geometry .sigmgr._PF:5 288x349+713+414
+wm geometry .sigmgr._PF:5 288x349+699+345
+wm geometry .sigmgr._PF:5 288x349+700+314
+wm geometry .sigmgr._PF:5 288x349+702+307
+wm geometry .sigmgr._PF:5 288x349+702+306
+pf:read PF:5 v(x1)
+# WF:5:1
+Graph addsignal WF:5:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal16
+pf:read PF:5 v(x3)
+# WF:5:2
+Graph addsignal WF:5:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal17
+wm geometry .sigmgr._PF:5 288x349+712+314
+wm geometry .sigmgr 472x220+884+136
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal17 add
+# Signal17
+Graph itemselect Signal17 add
+# Signal17
+Graph:DSel
+Graph itemselect AxisX(0) add
+# AxisX(0)
+Graph:DSel
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal16 add
+# Signal16
+Graph itemselect Signal16 add
+# Signal16
+wm geometry .sigmgr._PF:5 288x349+702+306
+Graph itemselect Signal16 add
+# Signal16
+ScopeSigMgr:Unload 0 {{(2) SNM_Dice.sw0}}
+Graph:DSel
+Graph itemselect Signal17 add
+# Signal17
+Graph:DSel
+Graph itemselect Signal13 add
+# Signal13
+ScopeSigMgr:Unload 1
+Graph0 delsignal Signal17
+Graph0 delsignal Signal16
+Graph0 delsignal Signal12
+Graph0 delsignal Signal13
+Graph0 delsignal Signal14
+Graph0 delsignal Signal15
+Graph:DSel
+ScopeSigMgr:loadpffile /home/mariahang/ECL/Finfet/DICE/SNM_Dice.sw0 1 openonly
+# PF:6
+pf:read PF:6 v(x0)
+# WF:6:1
+Graph addsignal WF:6:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:6 v(x1)
+# WF:6:2
+Graph addsignal WF:6:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+pf:read PF:6 v(x2)
+# WF:6:3
+Graph addsignal WF:6:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+pf:read PF:6 v(x3)
+# WF:6:4
+Graph addsignal WF:6:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+wm geometry .sigmgr 472x220+884+136
 Graph:Select Graph0
 Graph:DSel
 Graph itemselect Signal3 add
@@ -38,124 +125,117 @@ Graph itemselect Signal1 add
 Graph sigconfig Signal1 -region 0 -rgnindex 1
 Graph:DSel
 Graph:DSel
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-GrXY:NewGraph
-# Graph1
+ScopeSigMgr:loadpffile /home/mariahang/ECL/Finfet/DICE/SNM_Dice.sw0 1 openonly
+# PF:7
+pf:read PF:7 v(x0)
+# WF:7:1
+Graph addsignal WF:7:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal4
+pf:read PF:7 v(x2)
+# WF:7:2
+Graph addsignal WF:7:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal5
+wm geometry .sigmgr 472x220+884+136
 Graph:Select Graph0
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-GrCOMPLEX:NewGraph
-# Graph2
-Graph:Select Graph0
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-Graph:Select Graph0
-Graph axisconfig AxisY(0,0) -gridvis yes
-Graph axisconfig AxisY(1,0) -gridvis yes
 Graph:DSel
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+Graph itemselect Signal2 add
+# Signal2
+Graph:DSel
+Graph itemselect Signal0 add
+# Signal0
+Graph delsignal selected
+Graph delsignal selected
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal2 add
+# Signal2
+Graph delsignal selected
+Graph:DSel
+Graph itemselect Signal5 add
+# Signal5
+Graph:DSel
+Graph itemselect Signal4 add
+# Signal4
+Graph sigconfig Signal4 -region 0 -rgnindex 1
+Graph:DSel
+Graph itemselect Signal5 add
+# Signal5
+Graph sigconfig Signal5 -region 1 -rgnindex 1
+Graph itemselect Signal5 add
+# Signal5
+Graph itemselect Signal5 add
+# Signal5
+Graph itemselect Signal5 add
+# Signal5
+Graph itemselect Signal5 add
+# Signal5
+Graph itemselect Signal5 add
+# Signal5
+Graph itemselect Signal5 add
+# Signal5
+Graph itemselect Signal5 add
+# Signal5
 Graph:DSel
 Graph:Select Graph0
 Graph:DSel
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+Graph itemselect Signal1 add
+# Signal1
+Graph itemselect Signal1 add
+# Signal1
+Graph:DSel
+ScopeSigMgr:Unload 1
+Graph0 delsignal Signal4
+Graph0 delsignal Signal5
+Graph0 delsignal Signal3
+Graph0 delsignal Signal1
+ScopeSigMgr:loadpffile /home/mariahang/ECL/Finfet/DICE/SNM_Dice.sw0 1 openonly
+# PF:8
+pf:read PF:8 v(x0)
+# WF:8:1
+Graph addsignal WF:8:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:8 v(x1)
+# WF:8:2
+Graph addsignal WF:8:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+pf:read PF:8 v(x2)
+# WF:8:3
+Graph addsignal WF:8:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+pf:read PF:8 v(x3)
+# WF:8:4
+Graph addsignal WF:8:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+wm geometry .sigmgr 472x220+884+136
+ScopeSigMgr:Reload 0 {{(1) SNM_Dice.sw0}}
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal5 add
+# Signal5
+Graph sigconfig Signal5 -region 0 -rgnindex 1
+Graph:DSel
+Graph itemselect Signal7 add
+# Signal7
+Graph sigconfig Signal7 -region 1 -rgnindex 1
+Graph:DSel
+ScopeSigMgr:loadpffile /home/mariahang/ECL/Finfet/DICE/SNM_Dice.sw0 1 openonly
+# PF:10
+wm geometry .sigmgr._PF:10 288x349+713+384
+pf:read PF:10 v(bl)
+# WF:10:1
+Graph addsignal WF:10:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal8
+pf:read PF:10 v(wl)
+# WF:10:2
+Graph addsignal WF:10:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal9
+wm geometry .sigmgr 472x220+884+136
 Graph:DSel
 Graph:Select Graph0
 Graph:DSel
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-Graph:DSel
-Graph:Select Graph0
-Graph:DSel
-Graph:DSel
-Graph:DSel
-Graph:DSel
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
-ScopeSigMgr:Reload 0 {{(1) Robustez_Array_Dice.tr0}}
+ScopeSigMgr:Reload 0 {{(2) SNM_Dice.sw0}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0) AxisY(2,0) AxisY(3,0)} -range {all all all all all} -zoomed {0 0 0 0 0}
+ScopeSigMgr:Reload 0 {{(2) SNM_Dice.sw0}}
+ScopeSigMgr:Unload 0 {{(1) SNM_Dice.sw0}}
+ScopeSigMgr:Reload 0 {{(2) SNM_Dice.sw0}}
+ScopeSigMgr:Reload 0 {{(2) SNM_Dice.sw0}}

@@ -1,9 +1,12 @@
 * TOPOLOGIA DICE
 
+.TITLE "SNM DICE 0.5Ghz"
+
 .OPTION POST = 2
 .PRINT DC v(x0) v(x1) v(x2) v(x3)
 
 .include 7nm_TT.pm
+
 
 .param fin = 1
 

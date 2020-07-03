@@ -1,0 +1,76 @@
+* TOPOLOGIA DICE
+
+.OPTION POST = 2
+.PRINT DC v(x0) v(x1)
+
+.include 32nm_HP.pm
+
+* PARAMETROS
+* NODO
+.param length = 32n
+* DIMENSOES DA CELULA
+.param width = '2*length'
+
+* TENSAO DO CIRCUITO
+.param supply = 0.9
+
+.global supply gnd
+
+* SUPPLY DO CIRCUITO
+Vvdd vdd gnd DC supply
+
+* ==================== SNM
+Vvn vn gnd DC 0
+*
+* Vx0 x0 vn DC 0
+* Vx2 x2 vn DC 0
+
+Vx1 x1 vn DC 0
+Vx3 x3 vn DC 0
+
+* ==== HOLD
+* WL = 0
+* Vwl wl gnd DC 0
+* Vbl bl gnd DC supply
+* Vblb blb gnd DC supply
+
+* ==== READ 0
+* WL = 1 BL e BL = 1
+* Vwl wl gnd DC supply
+* Vbl bl gnd DC supply
+* Vblb blb gnd DC supply
+
+* ==== WRITE 1
+* WL = 1 BL = 0 BLB = 1
+Vwl wl gnd DC supply
+Vbl bl gnd DC supply
+Vblb blb gnd DC 0
+
+* DICE
+
+* INVERSOR 0
+MP0 vdd x3 x0 vdd PMOS w = width l = length
+MN0 x0 x1 gnd gnd NMOS w = width l = length
+
+* INVERSOR 1
+MP1 vdd x0 x1 vdd PMOS w = width l = length
+MN1 x1 x2 gnd gnd NMOS w = width l = length
+
+* INVERSOR 2
+MP2 vdd x1 x2 vdd PMOS w = width l = length
+MN2 x2 x3 gnd gnd NMOS w = width l = length
+
+* INVERSOR 3
+MP3 vdd x2 x3 vdd PMOS w = width l = length
+MN3 x3 x0 gnd gnd NMOS w = width l = length
+
+* TRANSISTORES DE PASSAGEM
+MN5 x1 wl bl gnd NMOS w = width l = length
+MN7 x3 wl bl gnd NMOS w = width l = length
+
+MN6 x2 wl blb gnd NMOS w = width l = length
+MN4 x0 wl blb gnd NMOS w = width l = length
+
+.DC Vvn 0 'supply' 'supply*0.001'
+
+.end

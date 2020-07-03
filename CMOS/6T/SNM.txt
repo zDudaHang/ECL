@@ -3,13 +3,16 @@
 .OPTION POST = 2
 .PRINT DC v(q) v(qb)
 
-.include 7nm_TT.pm
+.include 32nm_HP.pm
 
 * PARAMETROS
-.param fin = 1
+* NODO
+.param length = 32n
+* DIMENSOES DA CELULA
+.param width = '2*length'
 
 * TENSAO DO CIRCUITO
-.param supply = 0.4
+.param supply = 0.9
 
 * FONTE DO CIRCUITO
 Vvdd vdd gnd DC supply
@@ -42,17 +45,19 @@ Vblb blb gnd DC supply
 
 * 6T
 
+* TRANSISTORES DE PASSAGEM
+MN2 bl wl q gnd NMOS w = width l = length
+MN3 blb wl qb gnd NMOS w = width l = length
+
+* CELULA
+
 * PRIMEIRO INVERSOR
-MP0 vdd qb q vdd pmos_rvt nfin = fin
-MN0 q qb gnd gnd nmos_rvt nfin = fin
+MP0 vdd qb q vdd PMOS w = width l = length
+MN0 q qb gnd gnd NMOS w = width l = length
 
 * SEGUNDO INVERSOR
-MP1 vdd q qb vdd pmos_rvt nfin = fin
-MN1 qb q gnd gnd nmos_rvt nfin = fin
-
-* TRANSISTORES DE PASSAGEM
-MN2 bl wl q gnd nmos_rvt nfin = fin
-MN3 blb wl qb gnd nmos_rvt nfin = fin
+MP1 vdd q qb vdd PMOS w = width l = length
+MN1 qb q gnd gnd NMOS w = width l = length
 
 .DC Vvn 0 'supply' 'supply*0.001'
 
