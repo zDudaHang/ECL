@@ -39,7 +39,7 @@ Vwl1 wl_64 gnd PWL (0ns 0)
 *Vblb	 blb	 gnd	 PWL(0ns supply)
 
 * === READ SEU: 1.44ns
-* VALOR INICIAL DE X0 = SUPPLY 
+* VALOR INICIAL DE X0 = SUPPLY
 Vbit bit gnd PWL(0ns supply)
 
 *VALOR INICIAL DE X0 = 0
@@ -174,7 +174,7 @@ MN20 x0_64 wl_64 blb gnd nmos_rvt nfin = 'fin*(num_cel/2)'
 * Teste de resistencia a falhas
 * 101 : nodo gnd
 * 010 : gnd nodo
-*Iexp gnd x1 exp(0 0.1 1.44n 10p 1.44001n 320p)
+Iexp gnd x1 exp(0 0.1 1.44n 10p 1.44001n 320p)
 
 .tran 0.01ns '4*period'
 

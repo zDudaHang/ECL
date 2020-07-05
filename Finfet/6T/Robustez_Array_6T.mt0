@@ -1,4 +1,4 @@
 $DATA1 SOURCE='HSPICE' VERSION='H-2013.03-SP1 32-BIT'
 .TITLE ''array 6t 128 celulas finfet''
- leitura_0        temper           alter#            
-  1.127e-11         25.0000        1                 
+ trocouvalor      temper           alter#            
+  5.466e-11         25.0000        1                 

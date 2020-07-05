@@ -15,7 +15,7 @@
 .param num_cel = 128
 
 * TENSAO DO CIRCUITO
-.param supply = 0.7
+.param supply = 0.4
 
 * TEMPO
 .param clock = 1g
@@ -33,33 +33,38 @@ Vwl0    wl0     gnd     PWL(0ns 0)
 Vwl1    wl1     gnd     PWL(0ns 0)
 
 * ==== HOLD:
-*Vbit    bit     gnd     PWL(0ns 0)
-*Vwe     we      gnd     PWL(0ns 0)
-*Vwl     wl      gnd     PWL(0ns 0)
-*Vpre    pre     gnd     PWL(0ns 0)
-*Vsae    sae     gnd     PWL(0ns 0)
+
+* Vbit    bit     gnd     PWL(0ns 0)
+* Vwe     we      gnd     PWL(0ns 0)
+* Vwl     wl      gnd     PWL(0ns 0)
+* Vpre    pre     gnd     PWL(0ns 0)
+* Vsae    sae     gnd     PWL(0ns 0)
 
 * ==== WRITE: ESCREVER O VALOR OPOSTO -> ESCREVER O VALOR ALVO E INSERIR A FALHA NO TEMPO
-* VALOR INICIAL = 0V
-*Vbit bit gnd PWL(0ns supply 'period' supply 'period + slope' 0)
-* VALOR INICIAL = Supply
+
+* VALOR INICIAL DO 'Q' = 0V
+* Vbit bit gnd PWL(0ns supply 'period' supply 'period + slope' 0)
+
+* VALOR INICIAL DO 'Q' = Supply
 *Vbit bit gnd PWL(0ns 0 'period' 0 'period + slope' supply)
-
-*Vwl wl gnd PWL(0ns 0 '3*step' 0 '3*step + slope' supply '4*step' supply '4*step + slope' 0
-*+ 'period + 3*step' 0 'period + 3*step + slope' supply 'period + 4*step' supply 'period + 4*step + slope' 0)
-
-*Vwe we gnd PWL(0ns supply '2*period' supply '2*period + slope' 0)
-
-*Vpre pre gnd PWL(0ns 0 'step' 0 'step + slope' supply '6*step' supply '6*step + slope' 0
-*+ 'period + step' 0 'period + step + slope' supply 'period + 6*step' supply 'period + 6*step + slope' 0)
-
-*Vsae sae gnd PWL(0ns 0)
+*
+* Vwl wl gnd PWL(0ns 0 '3*step' 0 '3*step + slope' supply '4*step' supply '4*step + slope' 0
+* + 'period + 3*step' 0 'period + 3*step + slope' supply 'period + 4*step' supply 'period + 4*step + slope' 0)
+*
+* Vwe we gnd PWL(0ns supply '2*period' supply '2*period + slope' 0)
+*
+* Vpre pre gnd PWL(0ns 0 'step' 0 'step + slope' supply '6*step' supply '6*step + slope' 0
+* + 'period + step' 0 'period + step + slope' supply 'period + 6*step' supply 'period + 6*step + slope' 0)
+*
+* Vsae sae gnd PWL(0ns 0)
 
 * === READ: ESCREVER O VALOR E LER EM 1.44ns
+
 * VALOR INICIAL DO Q = SUPPLY
 Vbit bit gnd PWL(0ns 0)
+
 * VALOR INICIAL DO Q = 0
-*Vbit bit gnd PWL(0ns supply)
+* Vbit bit gnd PWL(0ns supply)
 
 Vwl wl gnd PWL(0ns 0 '3*step' 0 '3*step + slope' supply '4*step' supply '4*step + slope' 0
 + 'period + 3*step' 0 'period + 3*step + slope' supply 'period + 4*step' supply 'period + 4*step + slope' 0)
@@ -145,7 +150,7 @@ MN11 blb wl1 q1b gnd nmos_rvt nfin ='fin*(num_cel/2)'
 * TESTE DE ROBUSTEZ
 * 010 : gnd nodo
 * 101 : nodo gnd
-Iexp1 gnd q exp(0 30u 1.44n 10p 1.44001n 320p)
+Iexp gnd q exp(0 6u 1.44n 10p 1.44001n 320p)
 
 .tran 0.01ns '4*period'
 
